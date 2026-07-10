@@ -1,0 +1,110 @@
+[
+  {
+    "id": "rel_001",
+    "veteranId": "vet_001",
+    "relatedName": "池峰城",
+    "relatedType": "commander",
+    "relation": "上级·师长",
+    "description": "第三十一师师长池峰城，台儿庄战役中直接指挥张守义所在连队坚守北门。",
+    "isHistoricalFigure": true
+  },
+  {
+    "id": "rel_002",
+    "veteranId": "vet_001",
+    "relatedName": "小刘",
+    "relatedType": "comrade",
+    "relation": "同连战友",
+    "description": "年仅十七岁的新兵，台儿庄战役中拉响手榴弹与日军同归于尽。张守义至今记得他的名字。",
+    "isHistoricalFigure": false
+  },
+  {
+    "id": "rel_003",
+    "veteranId": "vet_001",
+    "relatedName": "赵老兵",
+    "relatedType": "comrade",
+    "relation": "同连战友",
+    "description": "台儿庄战役中腰绑八颗手榴弹炸毁日军坦克，壮烈牺牲。",
+    "isHistoricalFigure": false
+  },
+  {
+    "id": "rel_004",
+    "veteranId": "vet_001",
+    "relatedName": "刘明远",
+    "relatedType": "descendant",
+    "relation": "口述采集志愿者",
+    "description": "山东枣庄志愿者，多次走访张守义老人进行口述采集，已完成3条录音记录。",
+    "isHistoricalFigure": false
+  },
+  {
+    "id": "rel_005",
+    "veteranId": "vet_002",
+    "relatedName": "陈赓",
+    "relatedType": "commander",
+    "relation": "上级·旅长",
+    "description": "三八六旅旅长陈赓，直接领导李长青所在排的作战行动。",
+    "isHistoricalFigure": true
+  },
+  {
+    "id": "rel_006",
+    "veteranId": "vet_002",
+    "relatedName": "刘伯承",
+    "relatedType": "commander",
+    "relation": "上级·师长",
+    "description": "一二九师师长刘伯承，百团大战中统筹指挥包括三八六旅在内的部队。",
+    "isHistoricalFigure": true
+  },
+  {
+    "id": "rel_007",
+    "veteranId": "vet_002",
+    "relatedName": "小王",
+    "relatedType": "comrade",
+    "relation": "同排战友",
+    "description": "新兵，在攻打日军据点时因紧张手榴弹扔近了，差点伤到自己人。",
+    "isHistoricalFigure": false
+  },
+  {
+    "id": "rel_008",
+    "veteranId": "vet_003",
+    "relatedName": "薛岳",
+    "relatedType": "commander",
+    "relation": "上级·战区长官",
+    "description": "第九战区司令长官薛岳，制定天炉战法，指挥三次长沙会战。",
+    "isHistoricalFigure": true
+  },
+  {
+    "id": "rel_009",
+    "veteranId": "vet_003",
+    "relatedName": "李玉堂",
+    "relatedType": "commander",
+    "relation": "上级·军长",
+    "description": "第十军军长李玉堂，在长沙会战中直接指挥王德福所在营的作战。",
+    "isHistoricalFigure": true
+  },
+  {
+    "id": "rel_010",
+    "veteranId": "vet_004",
+    "relatedName": "大柱子",
+    "relatedType": "comrade",
+    "relation": "同班战友·保定老乡",
+    "description": "淞沪会战罗店战斗中被机枪打中胸口牺牲，临终前嘱托'铁柱，告诉我娘，我没给她丢人'。",
+    "isHistoricalFigure": false
+  },
+  {
+    "id": "rel_011",
+    "veteranId": "vet_005",
+    "relatedName": "王敬久",
+    "relatedType": "commander",
+    "relation": "上级·师长",
+    "description": "第八十七师师长王敬久，淞沪会战中指挥该师在八字桥一线作战。",
+    "isHistoricalFigure": true
+  },
+  {
+    "id": "rel_012",
+    "veteranId": "vet_005",
+    "relatedName": "赵铁柱",
+    "relatedType": "comrade",
+    "relation": "同一战役战友",
+    "description": "两人均参加淞沪会战，虽不在同一部队，但在战后有过交流。赵铁柱在第十四集团军第九军，陈国栋在第八十七师。",
+    "isHistoricalFigure": false
+  }
+]

@@ -1,0 +1,472 @@
+[
+  {
+    "id": "vet_001",
+    "name": "张守义",
+    "birthYear": 1918,
+    "deathYear": null,
+    "hometown": "山东枣庄",
+    "militaryUnit": "第二集团军第三十一师",
+    "unitId": "unit_001",
+    "rank": "连长",
+    "bio": "1937年入伍，先后参加台儿庄战役、武汉会战。在台儿庄战役中率部坚守北门，身负重伤仍坚持指挥，战后被授予勋章。抗战胜利后回乡务农，晚年积极向后人讲述抗战经历。",
+    "battleIds": [
+      "btl_001",
+      "btl_004"
+    ],
+    "photo": "",
+    "recordingCount": 3,
+    "birthPlace": {
+      "lat": 34.81,
+      "lng": 117.56,
+      "name": "山东枣庄"
+    },
+    "timeline": [
+      {
+        "year": 1918,
+        "month": 3,
+        "event": "出生于山东省枣庄市",
+        "type": "birth",
+        "lat": 34.81,
+        "lng": 117.56
+      },
+      {
+        "year": 1937,
+        "month": 7,
+        "event": "抗战爆发后入伍，编入第二集团军第三十一师",
+        "type": "enlist",
+        "lat": 34.81,
+        "lng": 117.56
+      },
+      {
+        "year": 1938,
+        "month": 3,
+        "event": "参加台儿庄战役，率部坚守北门，身负重伤",
+        "type": "battle",
+        "lat": 34.56,
+        "lng": 117.73
+      },
+      {
+        "year": 1938,
+        "month": 4,
+        "event": "战后被授予勋章，全连仅剩三十一人",
+        "type": "honor",
+        "lat": 34.56,
+        "lng": 117.73
+      },
+      {
+        "year": 1938,
+        "month": 7,
+        "event": "伤愈归队，参加武汉会战，转战大别山",
+        "type": "battle",
+        "lat": 31.2,
+        "lng": 115.3
+      },
+      {
+        "year": 1938,
+        "month": 10,
+        "event": "武汉会战后被炸弹震伤，听力受损",
+        "type": "injury",
+        "lat": 31.2,
+        "lng": 115.3
+      },
+      {
+        "year": 1939,
+        "month": 1,
+        "event": "随部队撤至湖南休整，升任连长",
+        "type": "promotion",
+        "lat": 28.23,
+        "lng": 112.94
+      },
+      {
+        "year": 1945,
+        "month": 8,
+        "event": "抗战胜利，选择回乡务农",
+        "type": "discharge",
+        "lat": 34.81,
+        "lng": 117.56
+      },
+      {
+        "year": 2025,
+        "month": 3,
+        "event": "接受志愿者口述采集，留下3段珍贵录音",
+        "type": "interview",
+        "lat": 34.81,
+        "lng": 117.56
+      }
+    ],
+    "createdAt": "2025-01-15T08:00:00Z"
+  },
+  {
+    "id": "vet_002",
+    "name": "李长青",
+    "birthYear": 1920,
+    "deathYear": 2019,
+    "hometown": "山西长治",
+    "militaryUnit": "八路军第一二九师三八六旅",
+    "unitId": "unit_002",
+    "rank": "排长",
+    "bio": "1938年参加八路军，在太行山一带开展游击战。参加百团大战期间，负责破袭正太铁路，多次深入敌后执行任务。一生保持军人作风，晚年仍在社区讲述抗战故事。",
+    "battleIds": [
+      "btl_002"
+    ],
+    "photo": "",
+    "recordingCount": 2,
+    "birthPlace": {
+      "lat": 36.2,
+      "lng": 113.12,
+      "name": "山西长治"
+    },
+    "timeline": [
+      {
+        "year": 1920,
+        "month": 5,
+        "event": "出生于山西省长治市",
+        "type": "birth",
+        "lat": 36.2,
+        "lng": 113.12
+      },
+      {
+        "year": 1938,
+        "month": 3,
+        "event": "参加八路军，编入第一二九师三八六旅",
+        "type": "enlist",
+        "lat": 36.2,
+        "lng": 113.12
+      },
+      {
+        "year": 1938,
+        "month": 8,
+        "event": "在太行山区开展游击战，升任班长",
+        "type": "promotion",
+        "lat": 37.87,
+        "lng": 112.55
+      },
+      {
+        "year": 1940,
+        "month": 8,
+        "event": "参加百团大战，破袭正太铁路",
+        "type": "battle",
+        "lat": 37.87,
+        "lng": 112.55
+      },
+      {
+        "year": 1940,
+        "month": 9,
+        "event": "攻打日军据点，缴获歪把子机枪一挺",
+        "type": "honor",
+        "lat": 37.85,
+        "lng": 112.6
+      },
+      {
+        "year": 1942,
+        "month": 1,
+        "event": "升任排长",
+        "type": "promotion",
+        "lat": 37.87,
+        "lng": 112.55
+      },
+      {
+        "year": 1945,
+        "month": 8,
+        "event": "抗战胜利，继续在部队服役",
+        "type": "milestone"
+      },
+      {
+        "year": 1955,
+        "month": 1,
+        "event": "转业回乡，在长治定居",
+        "type": "discharge",
+        "lat": 36.2,
+        "lng": 113.12
+      },
+      {
+        "year": 2019,
+        "month": 11,
+        "event": "在长治辞世，享年99岁",
+        "type": "death",
+        "lat": 36.2,
+        "lng": 113.12
+      }
+    ],
+    "createdAt": "2025-01-20T08:00:00Z"
+  },
+  {
+    "id": "vet_003",
+    "name": "王德福",
+    "birthYear": 1916,
+    "deathYear": null,
+    "hometown": "湖南长沙",
+    "militaryUnit": "第九战区第十军",
+    "unitId": "unit_003",
+    "rank": "营长",
+    "bio": "1935年从军，三次参加长沙会战。在第二次长沙会战中率部在捞刀河一线阻击日军，战斗异常惨烈，全营仅剩三十余人。抗战期间多次负伤，至今体内仍留有弹片。",
+    "battleIds": [
+      "btl_003"
+    ],
+    "photo": "",
+    "recordingCount": 2,
+    "birthPlace": {
+      "lat": 28.23,
+      "lng": 112.94,
+      "name": "湖南长沙"
+    },
+    "timeline": [
+      {
+        "year": 1916,
+        "month": 8,
+        "event": "出生于湖南省长沙市",
+        "type": "birth",
+        "lat": 28.23,
+        "lng": 112.94
+      },
+      {
+        "year": 1935,
+        "month": 6,
+        "event": "从军入伍，编入第十军",
+        "type": "enlist",
+        "lat": 28.23,
+        "lng": 112.94
+      },
+      {
+        "year": 1939,
+        "month": 9,
+        "event": "参加第一次长沙会战",
+        "type": "battle",
+        "lat": 28.23,
+        "lng": 112.94
+      },
+      {
+        "year": 1941,
+        "month": 9,
+        "event": "参加第二次长沙会战，守捞刀河，全营五百人仅剩三十余",
+        "type": "battle",
+        "lat": 28.31,
+        "lng": 113.02
+      },
+      {
+        "year": 1941,
+        "month": 9,
+        "event": "左臂被弹片击伤，至今体内留有弹片",
+        "type": "injury",
+        "lat": 28.31,
+        "lng": 113.02
+      },
+      {
+        "year": 1941,
+        "month": 12,
+        "event": "参加第三次长沙会战，守卫长沙城",
+        "type": "battle",
+        "lat": 28.23,
+        "lng": 112.94
+      },
+      {
+        "year": 1942,
+        "month": 1,
+        "event": "因功升任营长",
+        "type": "promotion",
+        "lat": 28.23,
+        "lng": 112.94
+      },
+      {
+        "year": 1945,
+        "month": 8,
+        "event": "抗战胜利，回乡务农",
+        "type": "discharge",
+        "lat": 28.23,
+        "lng": 112.94
+      },
+      {
+        "year": 2025,
+        "month": 3,
+        "event": "接受志愿者口述采集",
+        "type": "interview",
+        "lat": 28.23,
+        "lng": 112.94
+      }
+    ],
+    "createdAt": "2025-02-01T08:00:00Z"
+  },
+  {
+    "id": "vet_004",
+    "name": "赵铁柱",
+    "birthYear": 1919,
+    "deathYear": 2020,
+    "hometown": "河北保定",
+    "militaryUnit": "第十四集团军第九军",
+    "unitId": "unit_004",
+    "rank": "班长",
+    "bio": "1937年抗战爆发后参军，先后参加淞沪会战和武汉会战。在淞沪会战中坚守罗店阵地，与日军展开巷战，亲眼目睹战友在身边牺牲。战后返乡，常在清明节祭奠牺牲战友。",
+    "battleIds": [
+      "btl_005",
+      "btl_004"
+    ],
+    "photo": "",
+    "recordingCount": 3,
+    "birthPlace": {
+      "lat": 38.87,
+      "lng": 115.47,
+      "name": "河北保定"
+    },
+    "timeline": [
+      {
+        "year": 1919,
+        "month": 2,
+        "event": "出生于河北省保定市",
+        "type": "birth",
+        "lat": 38.87,
+        "lng": 115.47
+      },
+      {
+        "year": 1937,
+        "month": 8,
+        "event": "抗战爆发后参军，编入第十四集团军第九军",
+        "type": "enlist",
+        "lat": 38.87,
+        "lng": 115.47
+      },
+      {
+        "year": 1937,
+        "month": 9,
+        "event": "参加淞沪会战，守罗店阵地，全班十二人仅存一人",
+        "type": "battle",
+        "lat": 31.41,
+        "lng": 121.35
+      },
+      {
+        "year": 1937,
+        "month": 9,
+        "event": "战友大柱子牺牲，临终嘱托'告诉我娘'",
+        "type": "milestone",
+        "lat": 31.41,
+        "lng": 121.35
+      },
+      {
+        "year": 1938,
+        "month": 7,
+        "event": "参加武汉会战，在大别山遭日军毒气弹攻击",
+        "type": "battle",
+        "lat": 31.2,
+        "lng": 115.3
+      },
+      {
+        "year": 1938,
+        "month": 8,
+        "event": "毒气中毒，治疗数周",
+        "type": "injury",
+        "lat": 31.2,
+        "lng": 115.3
+      },
+      {
+        "year": 1945,
+        "month": 8,
+        "event": "抗战胜利，回乡务农",
+        "type": "discharge",
+        "lat": 38.87,
+        "lng": 115.47
+      },
+      {
+        "year": 2020,
+        "month": 5,
+        "event": "在保定辞世，享年101岁",
+        "type": "death",
+        "lat": 38.87,
+        "lng": 115.47
+      }
+    ],
+    "createdAt": "2025-02-10T08:00:00Z"
+  },
+  {
+    "id": "vet_005",
+    "name": "陈国栋",
+    "birthYear": 1915,
+    "deathYear": 2018,
+    "hometown": "江苏南京",
+    "militaryUnit": "第八十七师",
+    "unitId": "unit_005",
+    "rank": "连长",
+    "bio": "1933年投笔从戎，毕业于中央军校。淞沪会战中率连在八字桥与日军激战三昼夜，全连阵亡过半。后撤途中参加南京保卫战，九死一生突围而出。晚年致力于口述历史记录。",
+    "battleIds": [
+      "btl_005"
+    ],
+    "photo": "",
+    "recordingCount": 1,
+    "birthPlace": {
+      "lat": 32.06,
+      "lng": 118.8,
+      "name": "江苏南京"
+    },
+    "timeline": [
+      {
+        "year": 1915,
+        "month": 1,
+        "event": "出生于江苏省南京市",
+        "type": "birth",
+        "lat": 32.06,
+        "lng": 118.8
+      },
+      {
+        "year": 1933,
+        "month": 9,
+        "event": "投笔从戎，考入中央军校",
+        "type": "education",
+        "lat": 32.06,
+        "lng": 118.8
+      },
+      {
+        "year": 1935,
+        "month": 6,
+        "event": "中央军校毕业，任第八十七师排长",
+        "type": "enlist",
+        "lat": 32.06,
+        "lng": 118.8
+      },
+      {
+        "year": 1937,
+        "month": 8,
+        "event": "参加淞沪会战，率连守八字桥，全连阵亡过半",
+        "type": "battle",
+        "lat": 31.28,
+        "lng": 121.49
+      },
+      {
+        "year": 1937,
+        "month": 12,
+        "event": "参加南京保卫战，守雨花台，九死一生突围",
+        "type": "battle",
+        "lat": 32.02,
+        "lng": 118.78
+      },
+      {
+        "year": 1938,
+        "month": 1,
+        "event": "突围后游过秦淮河，一路目睹百姓惨状",
+        "type": "milestone",
+        "lat": 32.02,
+        "lng": 118.8
+      },
+      {
+        "year": 1945,
+        "month": 8,
+        "event": "抗战胜利",
+        "type": "milestone"
+      },
+      {
+        "year": 1946,
+        "month": 3,
+        "event": "退役，致力于口述历史记录",
+        "type": "discharge",
+        "lat": 32.06,
+        "lng": 118.8
+      },
+      {
+        "year": 2018,
+        "month": 7,
+        "event": "在南京辞世，享年103岁",
+        "type": "death",
+        "lat": 32.06,
+        "lng": 118.8
+      }
+    ],
+    "createdAt": "2025-02-15T08:00:00Z"
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "cor_001",
+    "targetType": "veteran",
+    "targetId": "vet_001",
+    "submitterName": "张明",
+    "submitterContact": "zhangming***@163.com",
+    "type": "supplement",
+    "content": "张守义老人是我的外公，他在台儿庄战役后还参加了1939年的冬季攻势作战，这一段经历尚未记录。我手中有外公的参军证件和相关照片可以提供。",
+    "status": "pending",
+    "submittedAt": "2025-04-01T10:00:00Z"
+  },
+  {
+    "id": "cor_002",
+    "targetType": "unit",
+    "targetId": "unit_001",
+    "submitterName": "历史爱好者",
+    "submitterContact": "",
+    "type": "correction",
+    "content": "第三十一师在台儿庄战役中的师长应为池峰城，文中记录正确。但副师长乜子彬的任期应为1937-1938年，而非1938-1939年，请核实。",
+    "status": "pending",
+    "submittedAt": "2025-04-05T14:30:00Z"
+  },
+  {
+    "id": "cor_003",
+    "targetType": "veteran",
+    "targetId": "vet_004",
+    "submitterName": "赵小红",
+    "submitterContact": "",
+    "type": "supplement",
+    "content": "赵铁柱是我爷爷，他于2020年去世。爷爷生前还提到过在武汉会战中被日军毒气弹伤害的经历，家中保存有爷爷的军功章和退伍证。希望补充到档案中。",
+    "status": "reviewed",
+    "submittedAt": "2025-04-10T09:00:00Z"
+  },
+  {
+    "id": "cor_1783659638856_7vsn73",
+    "targetType": "battle",
+    "targetId": "btl_001",
+    "submitterName": "测试用户",
+    "submitterContact": "",
+    "type": "supplement",
+    "content": "张守义连队在台儿庄北门的坚守时间应为三天三夜",
+    "status": "pending",
+    "submittedAt": "2026-07-10T05:00:38.856Z"
+  }
+]

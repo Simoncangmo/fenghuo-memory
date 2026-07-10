@@ -1,0 +1,122 @@
+[
+  {
+    "id": "place_001",
+    "name": "台儿庄",
+    "aliases": ["台儿庄", "台城", "台庄"],
+    "province": "山东省",
+    "lat": 34.5636,
+    "lng": 117.7345,
+    "historicalNote": "台儿庄位于山东枣庄南部，大运河沿岸，是徐州的北大门。1938年台儿庄战役中，中国军队在此歼灭日军万余人，取得抗战以来正面战场首次重大胜利。",
+    "relatedBattles": ["btl_001"],
+    "relatedVeterans": ["vet_001"],
+    "relatedUnits": ["unit_001"]
+  },
+  {
+    "id": "place_002",
+    "name": "罗店",
+    "aliases": ["罗店", "罗店镇"],
+    "province": "上海市",
+    "lat": 31.4089,
+    "lng": 121.3528,
+    "historicalNote": "罗店是淞沪会战中最惨烈的战场之一，双方在此反复争夺数十次，被称为'血肉磨坊'。中国军队在此付出巨大牺牲。",
+    "relatedBattles": ["btl_005"],
+    "relatedVeterans": ["vet_004"],
+    "relatedUnits": ["unit_004"]
+  },
+  {
+    "id": "place_003",
+    "name": "长沙",
+    "aliases": ["长沙", "星城"],
+    "province": "湖南省",
+    "lat": 28.2282,
+    "lng": 112.9388,
+    "historicalNote": "长沙是抗战时期第九战区司令部所在地。1939年至1942年间，中国军队在此四次击退日军进攻，史称'长沙会战'。薛岳的天炉战法在此大放异彩。",
+    "relatedBattles": ["btl_003"],
+    "relatedVeterans": ["vet_003"],
+    "relatedUnits": ["unit_003"]
+  },
+  {
+    "id": "place_004",
+    "name": "捞刀河",
+    "aliases": ["捞刀河", "涝刀河"],
+    "province": "湖南省",
+    "lat": 28.3100,
+    "lng": 113.0200,
+    "historicalNote": "捞刀河位于长沙北侧，是第二次长沙会战的重要战场。中国军队第十军在此与日军激战，伤亡惨重。",
+    "relatedBattles": ["btl_003"],
+    "relatedVeterans": ["vet_003"],
+    "relatedUnits": ["unit_003"]
+  },
+  {
+    "id": "place_005",
+    "name": "正太铁路",
+    "aliases": ["正太铁路", "正太线", "石太铁路"],
+    "province": "山西省/河北省",
+    "lat": 37.8700,
+    "lng": 112.5500,
+    "historicalNote": "正太铁路连接石家庄与太原，是百团大战的主要破袭目标。八路军一二九师三八六旅在此段铁路沿线展开破袭战，切断日军交通线。",
+    "relatedBattles": ["btl_002"],
+    "relatedVeterans": ["vet_002"],
+    "relatedUnits": ["unit_002"]
+  },
+  {
+    "id": "place_006",
+    "name": "八字桥",
+    "aliases": ["八字桥", "八字桥路口"],
+    "province": "上海市",
+    "lat": 31.2750,
+    "lng": 121.4900,
+    "historicalNote": "八字桥是淞沪会战爆发地。1937年8月13日，中国军队第八十七师在此与日军交火，标志着淞沪会战的全面爆发。",
+    "relatedBattles": ["btl_005"],
+    "relatedVeterans": ["vet_005"],
+    "relatedUnits": ["unit_005"]
+  },
+  {
+    "id": "place_007",
+    "name": "大别山",
+    "aliases": ["大别山", "大别山脉"],
+    "province": "安徽省/湖北省",
+    "lat": 31.2000,
+    "lng": 115.3000,
+    "historicalNote": "大别山是武汉会战的重要战场之一。中国军队在此利用山地地形阻击日军，战斗持续数月，大量消耗了日军有生力量。",
+    "relatedBattles": ["btl_004"],
+    "relatedVeterans": ["vet_001", "vet_004"],
+    "relatedUnits": ["unit_001", "unit_004"]
+  },
+  {
+    "id": "place_008",
+    "name": "雨花台",
+    "aliases": ["雨花台", "雨花台阵地"],
+    "province": "江苏省",
+    "lat": 32.0200,
+    "lng": 118.7800,
+    "historicalNote": "雨花台是南京保卫战的重要阵地。1937年12月，中国军队在此与日军激战，第八十七师等部队伤亡惨重，最终南京失守。",
+    "relatedBattles": ["btl_005"],
+    "relatedVeterans": ["vet_005"],
+    "relatedUnits": ["unit_005"]
+  },
+  {
+    "id": "place_009",
+    "name": "常德",
+    "aliases": ["常德", "常德城"],
+    "province": "湖南省",
+    "lat": 29.0400,
+    "lng": 111.6900,
+    "historicalNote": "常德是1943年常德会战的核心战场。第七十四军第五十七师八千将士在此死守十六天，几乎全军覆没，被誉为'东方斯大林格勒'。",
+    "relatedBattles": [],
+    "relatedVeterans": [],
+    "relatedUnits": ["unit_006", "unit_006a"]
+  },
+  {
+    "id": "place_010",
+    "name": "枣庄",
+    "aliases": ["枣庄", "枣庄市"],
+    "province": "山东省",
+    "lat": 34.8100,
+    "lng": 117.5600,
+    "historicalNote": "枣庄是抗战老兵张守义的家乡，也是台儿庄战役的后方基地。",
+    "relatedBattles": ["btl_001"],
+    "relatedVeterans": ["vet_001"],
+    "relatedUnits": []
+  }
+]

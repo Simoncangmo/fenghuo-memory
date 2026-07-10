@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>录入口述 · 烽火记忆</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <div class="record-page">
+    <div class="record-header">
+      <h1>口述信息录入</h1>
+      <p>志愿者现场录音或上传音频，系统自动转写文字并智能归类到老兵和战役</p>
+    </div>
+
+    <!-- 录音/上传切换 -->
+    <div class="recorder-box">
+      <div class="recorder-mode-tabs">
+        <button class="mode-tab active" onclick="switchMode('record')">在线录音</button>
+        <button class="mode-tab" onclick="switchMode('upload')">上传音频</button>
+      </div>
+
+      <!-- 在线录音模式 -->
+      <div id="recordMode">
+        <div class="record-button-wrapper">
+          <button class="record-button" id="recordButton" onclick="toggleRecording()">
+            <span class="icon" id="recordIcon">●</span>
+            <span id="recordText">开始录音</span>
+          </button>
+        </div>
+        <div class="recording-timer" id="recordingTimer">00:00</div>
+        <div class="audio-level" id="audioLevel"></div>
+        <div class="recording-status" id="recordingStatus">
+          点击按钮开始录音。录音时请保持环境安静，靠近麦克风。
+        </div>
+      </div>
+
+      <!-- 上传模式 -->
+      <div id="uploadMode" style="display: none;">
+        <div class="upload-area" id="uploadArea" onclick="document.getElementById('fileInput').click()">
+          <div class="upload-icon">♪</div>
+          <p>点击或拖拽音频文件到此处上传</p>
+          <p class="hint">支持 MP3, WAV, WebM, M4A, OGG 格式，最大 100MB</p>
+          <input type="file" id="fileInput" accept="audio/*" style="display: none;" onchange="handleFileSelect(event)">
+        </div>
+        <div id="uploadedFileInfo" style="display: none; margin-top: 16px;"></div>
+      </div>
+
+      <!-- 实时转写显示 -->
+      <div class="transcript-live" id="transcriptLiveBox">
+        <div class="transcript-live-label">
+          <span style="color: var(--c-gold);">●</span>
+          实时语音转文字（识别结果仅供参考，可手动编辑）
+        </div>
+        <div class="transcript-live-text" id="transcriptLiveText">
+          <span style="color: var(--c-text-3);">语音转写内容将在此处实时显示...</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 转写文字编辑 -->
+    <div class="form-section">
+      <h2>口述文字内容</h2>
+      <div class="form-group">
+        <label>转写文字 <span style="font-size: 12px; color: var(--c-text-3);">（可手动修改和补充）</span></label>
+        <textarea id="transcriptInput" rows="8" placeholder="录音转写的文字将自动填入此处，您也可以手动输入或编辑。如果是上传音频，请手动输入口述内容。"></textarea>
+      </div>
+
+      <!-- 自动归类预览 -->
+      <div class="auto-categorize-box" id="autoCategorizeBox" style="display: none;">
+        <h3><span style="color: var(--c-gold);">⚡</span> 智能归类建议（系统自动识别）</h3>
+        <div id="autoVeteranTags" style="margin-bottom: 8px;">
+          <div style="font-size: 12px; color: var(--c-text-3); margin-bottom: 4px;">匹配老兵：</div>
+          <div class="auto-categorize-result" id="autoVeteranResult"></div>
+        </div>
+        <div id="autoBattleTags" style="margin-bottom: 8px;">
+          <div style="font-size: 12px; color: var(--c-text-3); margin-bottom: 4px;">匹配战役：</div>
+          <div class="auto-categorize-result" id="autoBattleResult"></div>
+        </div>
+        <div>
+          <div style="font-size: 12px; color: var(--c-text-3); margin-bottom: 4px;">关键词标签：</div>
+          <div class="auto-categorize-result" id="autoTagResult"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 归类信息 -->
+    <div class="form-section">
+      <h2>归类信息</h2>
+      <div class="form-group">
+        <label>关联老兵 <span style="font-size: 12px; color: var(--c-text-3);">（可多选，系统也会自动匹配）</span></label>
+        <div class="tag-selector" id="veteranSelector">
+          <span style="color: var(--c-text-3); font-size: 13px;">加载中...</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>关联战役 <span style="font-size: 12px; color: var(--c-text-3);">（可多选，系统也会自动匹配）</span></label>
+        <div class="tag-selector" id="battleSelector">
+          <span style="color: var(--c-text-3); font-size: 13px;">加载中...</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>自定义标签</label>
+        <input type="text" id="customTags" placeholder="多个标签用逗号分隔，如：冲锋, 碉堡, 夜袭">
+      </div>
+    </div>
+
+    <!-- 志愿者信息 -->
+    <div class="form-section">
+      <h2>志愿者信息</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label>志愿者姓名 <span class="required">*</span></label>
+          <input type="text" id="volunteerName" placeholder="请输入您的姓名">
+        </div>
+        <div class="form-group">
+          <label>所在地区</label>
+          <input type="text" id="volunteerLocation" placeholder="如：山东枣庄">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>备注 <span style="font-size: 12px; color: var(--c-text-3);">（访谈时间、地点、老人状态等）</span></label>
+        <textarea id="notes" rows="3" placeholder="如：老人在家中口述，精神状态良好，讲述时多次落泪"></textarea>
+      </div>
+    </div>
+
+    <!-- 提交按钮 -->
+    <button class="submit-button" id="submitBtn" onclick="submitRecording()">
+      提交口述记录
+    </button>
+  </div>
+
+  <div id="footer"></div>
+
+  <script src="js/common.js"></script>
+  <script src="js/record.js"></script>
+</body>
+</html>

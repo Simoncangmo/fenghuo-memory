@@ -1,0 +1,425 @@
+[
+  {
+    "id": "btl_001",
+    "name": "台儿庄战役",
+    "startDate": "1938-03-16",
+    "endDate": "1938-04-15",
+    "location": "山东台儿庄",
+    "description": "台儿庄战役是抗日战争初期中国军队取得的一次重大胜利。中国军队在第五战区司令长官李宗仁指挥下，于山东台儿庄地区围歼日军矶谷廉介第十师团，歼敌万余人，极大地鼓舞了全国军民的抗战信心。",
+    "significance": "抗战以来正面战场首次重大胜利，打破了日军不可战胜的神话",
+    "veteranIds": [
+      "vet_001"
+    ],
+    "unitIds": [
+      "unit_001",
+      "unit_army_2"
+    ],
+    "recordingCount": 2,
+    "mapData": {
+      "centerLat": 34.5636,
+      "centerLng": 117.7345,
+      "zoom": 13,
+      "markers": [
+        {
+          "lat": 34.568,
+          "lng": 117.73,
+          "title": "台儿庄北门",
+          "type": "battle",
+          "description": "张守义连队坚守阵地，全连仅剩三十一人"
+        },
+        {
+          "lat": 34.56,
+          "lng": 117.74,
+          "title": "台儿庄城寨",
+          "type": "defense",
+          "description": "第三十一师师长池峰城指挥核心防御"
+        },
+        {
+          "lat": 34.55,
+          "lng": 117.72,
+          "title": "日军主攻方向",
+          "type": "enemy",
+          "description": "日军第十师团从北面进攻"
+        },
+        {
+          "lat": 34.58,
+          "lng": 117.76,
+          "title": "中国军队增援集结地",
+          "type": "reinforce",
+          "description": "增援部队由此方向投入战斗"
+        }
+      ],
+      "paths": [
+        {
+          "points": [
+            [
+              34.55,
+              117.72
+            ],
+            [
+              34.56,
+              117.73
+            ],
+            [
+              34.568,
+              117.73
+            ]
+          ],
+          "type": "attack",
+          "label": "日军进攻方向",
+          "color": "#C62828"
+        },
+        {
+          "points": [
+            [
+              34.568,
+              117.73
+            ],
+            [
+              34.565,
+              117.735
+            ],
+            [
+              34.56,
+              117.74
+            ]
+          ],
+          "type": "defense",
+          "label": "中国军队防线",
+          "color": "#2E7D32"
+        }
+      ]
+    },
+    "createdAt": "2025-01-15T08:00:00Z"
+  },
+  {
+    "id": "btl_002",
+    "name": "百团大战",
+    "startDate": "1940-08-20",
+    "endDate": "1941-01-24",
+    "location": "华北（正太铁路沿线）",
+    "description": "百团大战是八路军在华北敌后发动的一次大规模战役，由彭德怀指挥。以破袭正太铁路为重点，共投入105个团的兵力，破坏日军交通线，拔除敌伪据点，沉重打击了日军的囚笼政策。",
+    "significance": "抗战中八路军规模最大的一次战役，振奋了全国抗战信心",
+    "veteranIds": [
+      "vet_002"
+    ],
+    "unitIds": [
+      "unit_002",
+      "unit_129"
+    ],
+    "recordingCount": 2,
+    "mapData": {
+      "centerLat": 37.87,
+      "centerLng": 112.55,
+      "zoom": 8,
+      "markers": [
+        {
+          "lat": 37.87,
+          "lng": 112.55,
+          "title": "正太铁路破袭段",
+          "type": "battle",
+          "description": "三八六旅破袭正太铁路，扒毁铁轨半里路"
+        },
+        {
+          "lat": 37.85,
+          "lng": 112.6,
+          "title": "日军据点",
+          "type": "enemy",
+          "description": "八路军攻克的日军碉堡据点"
+        },
+        {
+          "lat": 38,
+          "lng": 112.4,
+          "title": "太行山根据地",
+          "type": "base",
+          "description": "八路军一二九师根据地"
+        }
+      ],
+      "paths": [
+        {
+          "points": [
+            [
+              38,
+              112.4
+            ],
+            [
+              37.9,
+              112.5
+            ],
+            [
+              37.87,
+              112.55
+            ]
+          ],
+          "type": "movement",
+          "label": "三八六旅行军路线",
+          "color": "#1565C0"
+        }
+      ]
+    },
+    "createdAt": "2025-01-20T08:00:00Z"
+  },
+  {
+    "id": "btl_003",
+    "name": "长沙会战",
+    "startDate": "1939-09-14",
+    "endDate": "1942-01-15",
+    "location": "湖南长沙",
+    "description": "长沙会战共经历四次大规模攻防战，中国第九战区部队在薛岳指挥下，运用天炉战法先后击退日军多次进攻，累计歼敌数万人。其中第三次长沙会战更是抗战以来正面战场歼敌最多的一次战役。",
+    "significance": "太平洋战争爆发后盟军方面的首次重大胜利",
+    "veteranIds": [
+      "vet_003"
+    ],
+    "unitIds": [
+      "unit_003",
+      "unit_006"
+    ],
+    "recordingCount": 2,
+    "mapData": {
+      "centerLat": 28.2282,
+      "centerLng": 112.9388,
+      "zoom": 10,
+      "markers": [
+        {
+          "lat": 28.2282,
+          "lng": 112.9388,
+          "title": "长沙城",
+          "type": "defense",
+          "description": "第十军守卫长沙城，第三次长沙会战核心战场"
+        },
+        {
+          "lat": 28.31,
+          "lng": 113.02,
+          "title": "捞刀河阵地",
+          "type": "battle",
+          "description": "王德福营队在此阻击日军，全营仅剩三十余人"
+        },
+        {
+          "lat": 28.15,
+          "lng": 112.85,
+          "title": "日军进攻方向",
+          "type": "enemy",
+          "description": "日军从南面进攻长沙"
+        },
+        {
+          "lat": 28.35,
+          "lng": 113.1,
+          "title": "中国军队包抄位置",
+          "type": "reinforce",
+          "description": "天炉战法两翼包抄部队集结地"
+        }
+      ],
+      "paths": [
+        {
+          "points": [
+            [
+              28.15,
+              112.85
+            ],
+            [
+              28.2,
+              112.9
+            ],
+            [
+              28.2282,
+              112.9388
+            ]
+          ],
+          "type": "attack",
+          "label": "日军进攻方向",
+          "color": "#C62828"
+        },
+        {
+          "points": [
+            [
+              28.35,
+              113.1
+            ],
+            [
+              28.3,
+              113.05
+            ],
+            [
+              28.2282,
+              112.9388
+            ]
+          ],
+          "type": "flank",
+          "label": "天炉战法包抄",
+          "color": "#1565C0"
+        }
+      ]
+    },
+    "createdAt": "2025-02-01T08:00:00Z"
+  },
+  {
+    "id": "btl_004",
+    "name": "武汉会战",
+    "startDate": "1938-06-11",
+    "endDate": "1938-10-27",
+    "location": "湖北武汉及周边",
+    "description": "武汉会战是抗战中规模最大、时间最长的一次战役。中日双方投入兵力超过百万，战场遍及安徽、河南、江西、湖北四省。虽然最终武汉失守，但大量消耗了日军有生力量，使抗日战争进入战略相持阶段。",
+    "significance": "抗日战争由战略防御转入战略相持的转折点",
+    "veteranIds": [
+      "vet_001",
+      "vet_004"
+    ],
+    "unitIds": [
+      "unit_001",
+      "unit_004"
+    ],
+    "recordingCount": 2,
+    "mapData": {
+      "centerLat": 31.2,
+      "centerLng": 115.3,
+      "zoom": 8,
+      "markers": [
+        {
+          "lat": 31.2,
+          "lng": 115.3,
+          "title": "大别山阵地",
+          "type": "battle",
+          "description": "第三十一师和第九军在此阻击日军"
+        },
+        {
+          "lat": 30.58,
+          "lng": 114.27,
+          "title": "武汉",
+          "type": "city",
+          "description": "会战核心城市"
+        },
+        {
+          "lat": 31.5,
+          "lng": 115,
+          "title": "日军进攻方向",
+          "type": "enemy",
+          "description": "日军沿长江和大别山北麓进攻"
+        },
+        {
+          "lat": 31.15,
+          "lng": 115.5,
+          "title": "毒气弹攻击点",
+          "type": "enemy",
+          "description": "赵铁柱所在部队遭芥子气攻击"
+        }
+      ],
+      "paths": [
+        {
+          "points": [
+            [
+              31.5,
+              115
+            ],
+            [
+              31.3,
+              115.2
+            ],
+            [
+              31.2,
+              115.3
+            ]
+          ],
+          "type": "attack",
+          "label": "日军进攻方向",
+          "color": "#C62828"
+        }
+      ]
+    },
+    "createdAt": "2025-02-10T08:00:00Z"
+  },
+  {
+    "id": "btl_005",
+    "name": "淞沪会战",
+    "startDate": "1937-08-13",
+    "endDate": "1937-11-26",
+    "location": "上海",
+    "description": "淞沪会战是抗战全面爆发后的第一次重大战役。中国军队投入约七十万兵力，在上海地区与日军激战三个多月。虽然最终失利，但粉碎了日军三个月灭亡中国的狂言，展示了中国人民抗战到底的决心。",
+    "significance": "粉碎日军三个月灭亡中国的狂言，开启全面抗战",
+    "veteranIds": [
+      "vet_004",
+      "vet_005"
+    ],
+    "unitIds": [
+      "unit_004",
+      "unit_005",
+      "unit_army_71"
+    ],
+    "recordingCount": 3,
+    "mapData": {
+      "centerLat": 31.275,
+      "centerLng": 121.49,
+      "zoom": 11,
+      "markers": [
+        {
+          "lat": 31.275,
+          "lng": 121.49,
+          "title": "八字桥",
+          "type": "battle",
+          "description": "陈国栋连队在此与日军激战三昼夜，全连阵亡过半"
+        },
+        {
+          "lat": 31.4089,
+          "lng": 121.3528,
+          "title": "罗店",
+          "type": "battle",
+          "description": "赵铁柱班在此坚守五天，全班十二人仅存一人，被称为'血肉磨坊'"
+        },
+        {
+          "lat": 31.23,
+          "lng": 121.47,
+          "title": "上海市区",
+          "type": "city",
+          "description": "淞沪会战核心区域"
+        },
+        {
+          "lat": 31.35,
+          "lng": 121.55,
+          "title": "日军登陆点",
+          "type": "enemy",
+          "description": "日军从长江南岸登陆"
+        }
+      ],
+      "paths": [
+        {
+          "points": [
+            [
+              31.35,
+              121.55
+            ],
+            [
+              31.38,
+              121.45
+            ],
+            [
+              31.4089,
+              121.3528
+            ]
+          ],
+          "type": "attack",
+          "label": "日军进攻罗店方向",
+          "color": "#C62828"
+        },
+        {
+          "points": [
+            [
+              31.23,
+              121.47
+            ],
+            [
+              31.25,
+              121.48
+            ],
+            [
+              31.275,
+              121.49
+            ]
+          ],
+          "type": "defense",
+          "label": "中国军队八字桥防线",
+          "color": "#2E7D32"
+        }
+      ]
+    },
+    "createdAt": "2025-02-15T08:00:00Z"
+  }
+]

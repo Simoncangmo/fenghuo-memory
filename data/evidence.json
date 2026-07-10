@@ -1,0 +1,123 @@
+[
+  {
+    "id": "evd_001",
+    "veteranId": "vet_001",
+    "type": "photo",
+    "title": "台儿庄战役后连队合影",
+    "description": "1938年4月台儿庄战役结束后拍摄，前排左三为张守义。全连一百二十人仅剩三十一人。照片由志愿者刘明远在老兵家中翻拍。",
+    "imageUrl": "",
+    "recordedBy": "刘明远",
+    "recordedAt": "2025-03-10",
+    "location": "山东枣庄"
+  },
+  {
+    "id": "evd_002",
+    "veteranId": "vet_001",
+    "type": "medal",
+    "title": "台儿庄战役勋章",
+    "description": "战后授予的勋章，铜质，正面刻有'台儿庄战役纪念'字样。张守义老人至今保存完好，视为至宝。",
+    "imageUrl": "",
+    "recordedBy": "刘明远",
+    "recordedAt": "2025-03-10",
+    "location": "山东枣庄"
+  },
+  {
+    "id": "evd_003",
+    "veteranId": "vet_001",
+    "type": "document",
+    "title": "退伍证明书",
+    "description": "1946年颁发的退伍证明书，纸质泛黄，盖有军政部公章。记载了张守义的军衔、部队番号和服役年限。",
+    "imageUrl": "",
+    "recordedBy": "刘明远",
+    "recordedAt": "2025-03-10",
+    "location": "山东枣庄"
+  },
+  {
+    "id": "evd_004",
+    "veteranId": "vet_002",
+    "type": "photo",
+    "title": "八路军三八六旅合影",
+    "description": "1940年百团大战期间拍摄，三八六旅部分官兵合影。李长青位于第二排右二。照片由家属提供。",
+    "imageUrl": "",
+    "recordedBy": "王小红",
+    "recordedAt": "2025-03-15",
+    "location": "山西长治"
+  },
+  {
+    "id": "evd_005",
+    "veteranId": "vet_002",
+    "type": "letter",
+    "title": "家书（1940年）",
+    "description": "百团大战期间李长青写给家中的信，信中提到'正太铁路已破袭数里，鬼子军列停运'。信纸保存完好，字迹清晰。",
+    "imageUrl": "",
+    "recordedBy": "王小红",
+    "recordedAt": "2025-03-15",
+    "location": "山西长治"
+  },
+  {
+    "id": "evd_006",
+    "veteranId": "vet_003",
+    "type": "medal",
+    "title": "长沙会战纪念章",
+    "description": "第三次长沙会战后授予的纪念章。王德福老人将其与阵亡战友的照片放在一起保存。",
+    "imageUrl": "",
+    "recordedBy": "陈思远",
+    "recordedAt": "2025-03-20",
+    "location": "湖南长沙"
+  },
+  {
+    "id": "evd_007",
+    "veteranId": "vet_003",
+    "type": "document",
+    "title": "负伤记录卡",
+    "description": "军医院出具的个人负伤记录，记载王德福在第二次长沙会战中左臂被弹片击伤。卡片上盖有军医院红色印章。",
+    "imageUrl": "",
+    "recordedBy": "陈思远",
+    "recordedAt": "2025-03-20",
+    "location": "湖南长沙"
+  },
+  {
+    "id": "evd_008",
+    "veteranId": "vet_004",
+    "type": "photo",
+    "title": "罗店战场旧照",
+    "description": "淞沪会战期间罗店阵地照片，可见被炮火摧毁的房屋和战壕。照片背面写有'罗店 五日 生存者仅余一人'字样。",
+    "imageUrl": "",
+    "recordedBy": "张文博",
+    "recordedAt": "2025-03-25",
+    "location": "河北保定"
+  },
+  {
+    "id": "evd_009",
+    "veteranId": "vet_004",
+    "type": "letter",
+    "title": "战友遗书",
+    "description": "同班战友大柱子牺牲前托人转交的遗书，信中嘱托'铁柱，告诉我娘，我没给她丢人'。赵铁柱老人保存至今。",
+    "imageUrl": "",
+    "recordedBy": "张文博",
+    "recordedAt": "2025-03-25",
+    "location": "河北保定"
+  },
+  {
+    "id": "evd_010",
+    "veteranId": "vet_005",
+    "type": "photo",
+    "title": "中央军校毕业照",
+    "description": "1933年中央军校毕业合影，陈国栋位于第三排。照片保存较完好，展示了当时军校学员的精神风貌。",
+    "imageUrl": "",
+    "recordedBy": "张文博",
+    "recordedAt": "2025-03-28",
+    "location": "江苏南京"
+  },
+  {
+    "id": "evd_011",
+    "veteranId": "vet_005",
+    "type": "document",
+    "title": "作战日记",
+    "description": "陈国栋在淞沪会战期间记录的作战日记，记录了八字桥战斗的详细经过。日记本封面已磨损，内页字迹工整。",
+    "imageUrl": "",
+    "recordedBy": "张文博",
+    "recordedAt": "2025-03-28",
+    "location": "江苏南京"
+  }
+]

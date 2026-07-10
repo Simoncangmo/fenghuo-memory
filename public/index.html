@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>烽火记忆 · 抗战实录Wiki</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>烽火记忆</h1>
+      <p class="hero-subtitle">抗战实录 Wiki · 时空检索 · 网状关联 · 多媒体还原</p>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="搜索老兵姓名、番号（如74军/七十四军）、地名、战役...">
+        <button onclick="performSearch()">搜索</button>
+      </div>
+      <div class="search-suggestions">
+        热门搜索：
+        <a href="javascript:void(0)" onclick="quickSearch('台儿庄')">台儿庄</a>
+        <a href="javascript:void(0)" onclick="quickSearch('74')">74军</a>
+        <a href="javascript:void(0)" onclick="quickSearch('百团大战')">百团大战</a>
+        <a href="javascript:void(0)" onclick="quickSearch('罗店')">罗店</a>
+        <a href="search.html">高级组合检索 →</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-bar">
+    <div class="stats-container" id="statsContainer">
+      <div class="stat-item"><div class="stat-value" id="statVeterans">-</div><div class="stat-label">老兵档案</div></div>
+      <div class="stat-item"><div class="stat-value" id="statBattles">-</div><div class="stat-label">战役记录</div></div>
+      <div class="stat-item"><div class="stat-value" id="statUnits">-</div><div class="stat-label">部队番号</div></div>
+      <div class="stat-item"><div class="stat-value" id="statRecordings">-</div><div class="stat-label">口述录音</div></div>
+      <div class="stat-item"><div class="stat-value" id="statVolunteers">-</div><div class="stat-label">参与志愿者</div></div>
+      <div class="stat-item"><div class="stat-value" id="statEvidence">-</div><div class="stat-label">历史物证</div></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="dual-column">
+      <div id="veterans">
+        <h2 class="section-title"><span><span class="icon">★</span>老兵档案</span></h2>
+        <div id="veteransList" class="loading"><div class="spinner"></div></div>
+      </div>
+      <div id="battles">
+        <h2 class="section-title"><span><span class="icon">◆</span>战役记录</span></h2>
+        <div id="battlesList" class="loading"><div class="spinner"></div></div>
+      </div>
+    </div>
+
+    <div id="units">
+      <h2 class="section-title">
+        <span><span class="icon">⬡</span>番号百科</span>
+        <a href="search.html" class="more-link">查看全部 →</a>
+      </h2>
+      <div id="unitsList" class="card-grid loading"><div class="spinner"></div></div>
+    </div>
+
+    <div id="recordings">
+      <h2 class="section-title"><span><span class="icon">♪</span>最新口述记录</span></h2>
+      <div id="recordingsList" class="loading"><div class="spinner"></div></div>
+    </div>
+
+    <div id="tags">
+      <h2 class="section-title"><span><span class="icon">#</span>关键词标签</span></h2>
+      <div id="tagCloud" class="tag-cloud loading"><div class="spinner"></div></div>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+  <script src="js/common.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>时空检索 · 烽火记忆</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div id="navbar"></div>
+  <div class="container">
+    <h2 class="section-title"><span><span class="icon">🔍</span>时空智能检索</span></h2>
+
+    <!-- 组合搜索 -->
+    <div class="search-filters" style="position: relative;">
+      <h3 style="font-family:var(--font-serif);font-size:17px;margin-bottom:16px;color:var(--c-dark);">组合搜索（至少输入一个）</h3>
+      <div class="filter-row">
+        <div class="filter-group">
+          <label>年份</label>
+          <select id="filterYear">
+            <option value="">全部年份</option>
+            <option value="1937">1937</option>
+            <option value="1938">1938</option>
+            <option value="1939">1939</option>
+            <option value="1940">1940</option>
+            <option value="1941">1941</option>
+            <option value="1942">1942</option>
+            <option value="1943">1943</option>
+            <option value="1944">1944</option>
+            <option value="1945">1945</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>地区</label>
+          <input type="text" id="filterRegion" placeholder="如：湖南、山东、上海...">
+        </div>
+        <div class="filter-group" style="position: relative;">
+          <label>部队番号</label>
+          <input type="text" id="filterUnit" placeholder="如：74军、三十一师..." autocomplete="off" oninput="onUnitInput()">
+          <div id="suggestDropdown" class="unit-suggest-dropdown" style="display:none;"></div>
+        </div>
+        <div class="filter-group">
+          <label>关键词</label>
+          <input type="text" id="filterKeyword" placeholder="如：74军、台儿庄、张守义...">
+        </div>
+      </div>
+      <div class="search-actions">
+        <button class="btn-primary" onclick="advancedSearch()">组合检索</button>
+        <button class="btn-secondary" onclick="resetFilters()">重置</button>
+      </div>
+    </div>
+
+    <!-- 搜索结果 -->
+    <div id="searchResults" style="margin-top: 28px;"></div>
+  </div>
+  <div id="footer"></div>
+  <script src="js/common.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>
