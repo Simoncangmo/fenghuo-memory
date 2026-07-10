@@ -1,4 +1,5 @@
-烽火记忆（抗战实录）网页：https://fenghuo-memory-production.up.railway.app/index.html
+# 阶段性作品
+**烽火记忆（抗战实录）网页**：https://fenghuo-memory-production.up.railway.app/index.html
 
 # 前期调研
 2026.7.9日，分别访谈三个案主（ADHD孩子、抗战老兵基金会工作人员、失独老人），经过分析，我们选择了抗战老兵基金会共工作人员作为本次项目的案主（其余的案主调研请参见：【腾讯文档】2026.7.10 案主调研&挑战声明
