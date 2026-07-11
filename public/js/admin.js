@@ -382,18 +382,16 @@ async function submitVeteran() {
     });
 
     // 显示成功弹窗
-    const totalBattles = selectedBattles.length + customBattles.length;
-    document.getElementById('successDesc').textContent =
-      '老兵「' + name + '」档案已创建，' +
-      (totalBattles > 0 ? '已关联' + totalBattles + '场战役，' : '') +
-      (unitUnknown ? '部队番号标记为不详' : '部队关联已自动更新');
-    document.getElementById('viewProfileLink').href = '/veteran.html?id=' + result.id;
     document.getElementById('successModal').style.display = 'flex';
   } catch (e) {
     alert('提交失败：' + e.message);
     btn.disabled = false;
     btn.textContent = '提交录入';
   }
+}
+
+function closeSuccessModal() {
+  document.getElementById('successModal').style.display = 'none';
 }
 
 function resetForm() {

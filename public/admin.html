@@ -84,14 +84,14 @@
     .btn-reset { padding: 14px 32px; font-size: 16px; background: var(--c-bg); color: var(--c-text-secondary); border: 1px solid var(--c-border); border-radius: 8px; cursor: pointer; }
     .btn-reset:hover { border-color: var(--c-text-muted); }
 
-    /* 成功提示 */
-    .success-modal { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: none; align-items: center; justify-content: center; z-index: 1000; }
-    .success-modal .modal-box { background: var(--c-surface); border-radius: 12px; padding: 36px; text-align: center; max-width: 420px; box-shadow: var(--shadow); }
-    .success-modal .modal-icon { font-size: 48px; margin-bottom: 16px; }
-    .success-modal .modal-title { font-family: var(--font-serif); font-size: 22px; color: var(--c-dark); margin-bottom: 8px; }
-    .success-modal .modal-desc { color: var(--c-text-secondary); font-size: 15px; margin-bottom: 24px; }
-    .success-modal .modal-link { display: inline-block; padding: 10px 28px; background: var(--c-mil-green); color: #fff; border-radius: 8px; text-decoration: none; font-size: 15px; margin: 0 6px; }
-    .success-modal .modal-link.secondary { background: var(--c-bg); color: var(--c-text-secondary); border: 1px solid var(--c-border); }
+    /* 成功提示卡片 */
+    .success-modal { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); display: none; align-items: center; justify-content: center; z-index: 1000; }
+    .success-modal .modal-card { background: var(--c-surface); border-radius: 16px; padding: 40px 36px 36px; max-width: 440px; width: 90%; box-shadow: 0 20px 60px rgba(0,0,0,0.25); position: relative; text-align: center; }
+    .success-modal .modal-card .modal-close { position: absolute; top: 14px; right: 18px; width: 32px; height: 32px; border: none; background: none; cursor: pointer; font-size: 22px; color: var(--c-text-muted); line-height: 1; border-radius: 50%; transition: background 0.2s; }
+    .success-modal .modal-card .modal-close:hover { background: rgba(0,0,0,0.08); color: var(--c-text); }
+    .success-modal .modal-icon { font-size: 44px; margin-bottom: 20px; }
+    .success-modal .modal-title { font-family: var(--font-serif); font-size: 22px; color: var(--c-dark); margin-bottom: 16px; }
+    .success-modal .modal-desc { color: var(--c-text-secondary); font-size: 15px; line-height: 1.8; }
 
     @media (max-width: 640px) {
       .form-row { flex-direction: column; gap: 0; }
@@ -231,12 +231,11 @@
 
   <!-- 成功弹窗 -->
   <div class="success-modal" id="successModal">
-    <div class="modal-box">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSuccessModal()">×</button>
       <div class="modal-icon">✅</div>
-      <div class="modal-title">录入成功</div>
-      <div class="modal-desc" id="successDesc">老兵档案已创建，关联信息已自动更新</div>
-      <a href="#" id="viewProfileLink" class="modal-link">查看档案</a>
-      <a href="/admin.html" class="modal-link secondary">继续录入</a>
+      <div class="modal-title">已收到</div>
+      <div class="modal-desc">感谢您帮助记录这位老兵。<br>每一位老兵的资料，都让历史更加完整。<br>期待您随时回来，继续分享更多珍贵信息。</div>
     </div>
   </div>
 

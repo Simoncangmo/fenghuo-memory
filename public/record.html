@@ -134,6 +134,16 @@
 
   <div id="footer"></div>
 
+  <!-- 成功弹窗卡片 -->
+  <div class="success-modal" id="successModal" style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.4);display:none;align-items:center;justify-content:center;z-index:1000;">
+    <div style="background:var(--c-surface);border-radius:16px;padding:40px 36px 36px;max-width:440px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,0.25);position:relative;text-align:center;">
+      <button onclick="closeSuccessModal()" style="position:absolute;top:14px;right:18px;width:32px;height:32px;border:none;background:none;cursor:pointer;font-size:22px;color:var(--c-text-muted);line-height:1;border-radius:50%;transition:background 0.2s;">×</button>
+      <div style="font-size:44px;margin-bottom:20px;">✅</div>
+      <div style="font-family:var(--font-serif);font-size:22px;color:var(--c-dark);margin-bottom:16px;">已收到</div>
+      <div style="color:var(--c-text-secondary);font-size:15px;line-height:1.8;">感谢您分享这段珍贵的记忆。<br>您的每一次补充，都在帮助我们保存和还原真实的历史。<br>如果您想起更多细节，欢迎随时回来继续完善。</div>
+    </div>
+  </div>
+
   <script src="js/common.js"></script>
   <script src="js/record.js"></script>
 </body>

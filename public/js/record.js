@@ -512,11 +512,7 @@ async function submitRecording() {
     }
 
     if (response.success) {
-      showToast('口述记录提交成功！系统已自动归类。');
-      // 延迟跳转到首页
-      setTimeout(() => {
-        window.location.href = 'index.html';
-      }, 1500);
+      document.getElementById('successModal').style.display = 'flex';
     } else {
       throw new Error(response.error || '提交失败');
     }
@@ -525,6 +521,10 @@ async function submitRecording() {
     btn.disabled = false;
     btn.textContent = '提交口述记录';
   }
+}
+
+function closeSuccessModal() {
+  document.getElementById('successModal').style.display = 'none';
 }
 
 // ======================== 初始化 ========================
