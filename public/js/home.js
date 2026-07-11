@@ -48,25 +48,83 @@ function getBattleName(r) {
 
 async function loadVeterans() {
   try {
-    const veterans = await api('/api/veterans');
+    const [veterans, recordings, battles] = await Promise.all([
+      api('/api/veterans'),
+      api('/api/recordings'),
+      api('/api/battles')
+    ]);
     const c = document.getElementById('veteransList');
+    c.classList.remove('loading');
     if (!veterans.length) { c.innerHTML = '<div class="empty-state"><div class="icon">★</div><p>暂无老兵档案</p></div>'; return; }
-    c.innerHTML = veterans.map(v => `
-      <div class="veteran-card" onclick="location.href='veteran.html?id=${v.id}'">
-        <div class="veteran-card-header">
-          <div class="veteran-avatar">${getInitials(v.name)}</div>
-          <div class="veteran-card-info">
-            <h3>${escapeHtml(v.name)}</h3>
-            <div class="unit">${escapeHtml(v.militaryUnit || '')} · ${escapeHtml(v.rank || '')}</div>
-          </div>
+
+    // Build battle name lookup
+    const battleMap = {};
+    battles.forEach(b => battleMap[b.id] = b.name);
+
+    c.innerHTML = veterans.map(v => {
+      // Find veteran's recordings
+      const vetRecordings = recordings.filter(r => r.veteranIds && r.veteranIds.includes(v.id));
+
+      // Extract a quote from recordings
+      let quote = '';
+      if (vetRecordings.length > 0) {
+        const rec = vetRecordings[0];
+        if (rec.transcriptSegments && rec.transcriptSegments.length > 1) {
+          // Skip intro segments (我叫/我是/接着说), find an impactful quote
+          const meaningful = rec.transcriptSegments.filter(s =>
+            s.text.length >= 15 &&
+            !s.text.startsWith('我叫') &&
+            !s.text.startsWith('我是') &&
+            !s.text.startsWith('再说') &&
+            !s.text.startsWith('接着说')
+          );
+          quote = meaningful.length > 0 ? meaningful[0].text : rec.transcriptSegments[1]?.text || '';
+        } else if (rec.transcript) {
+          // Extract from full transcript — pick a meaningful sentence
+          const sentences = rec.transcript.match(/[^。！？]+[。！？]+/g) || [];
+          const meaningful = sentences.filter(s =>
+            s.trim().length >= 10 &&
+            !s.trim().startsWith('我叫') &&
+            !s.trim().startsWith('我是') &&
+            !s.trim().startsWith('再说') &&
+            !s.trim().startsWith('接着说')
+          );
+          quote = meaningful.length > 0 ? meaningful[0].trim() : '';
+        }
+      }
+
+      // If no recording quote, use timeline entry from 1937-1945
+      if (!quote && v.timeline && v.timeline.length > 0) {
+        const warEvents = v.timeline.filter(t => t.year >= 1937 && t.year <= 1945 && t.event && t.type !== 'birth');
+        if (warEvents.length > 0) {
+          quote = warEvents[0].event;
+        }
+      }
+      // Final fallback: use bio
+      if (!quote && v.bio) {
+        const bioSentences = v.bio.match(/[^。！？]+[。！？]+/g) || [];
+        quote = bioSentences.length > 0 ? bioSentences[0].trim() : v.bio.substring(0, 60);
+      }
+
+      // Build battle · unit string
+      const battleNames = (v.battleIds || []).map(bid => battleMap[bid] || '').filter(Boolean);
+      const battleStr = battleNames.join(' · ');
+      const unitStr = v.militaryUnit || '';
+      const locationStr = battleStr && unitStr ? battleStr + ' · ' + unitStr : battleStr || unitStr || v.hometown || '';
+
+      // Link text varies by recordings
+      const linkText = vetRecordings.length > 0 ? '查看他的口述记录 →' : '查看他的抗战经历 →';
+
+      return `
+        <div class="veteran-card" onclick="location.href='veteran.html?id=${v.id}'">
+          <h3 class="veteran-card-name">${escapeHtml(v.name)}</h3>
+          <img class="veteran-card-avatar" src="/images/avatar-placeholder.png" alt="${escapeHtml(v.name)}">
+          ${quote ? `<div class="veteran-card-quote">"${escapeHtml(quote)}"</div>` : ''}
+          <div class="veteran-card-location">${escapeHtml(locationStr)}</div>
+          <a href="veteran.html?id=${v.id}" class="veteran-card-link" onclick="event.stopPropagation()">${linkText}</a>
         </div>
-        <div class="veteran-card-bio">${escapeHtml(v.bio || '')}</div>
-        <div class="veteran-card-footer">
-          <span>${escapeHtml(v.hometown || '')}</span>
-          <span>${v.deathYear ? '<span class="status-deceased">已故</span>' : '<span class="status-alive">健在</span>'} · <span class="recording-count">${v.recordingCount || 0} 条口述</span></span>
-        </div>
-      </div>
-    `).join('');
+      `;
+    }).join('');
   } catch (e) { document.getElementById('veteransList').innerHTML = `<div class="empty-state"><p>加载失败</p></div>`; }
 }
 
@@ -74,17 +132,14 @@ async function loadBattles() {
   try {
     const battles = await api('/api/battles');
     const c = document.getElementById('battlesList');
+    c.classList.remove('loading');
     if (!battles.length) { c.innerHTML = '<div class="empty-state"><div class="icon">◆</div><p>暂无战役记录</p></div>'; return; }
     c.innerHTML = battles.map(b => `
       <div class="battle-card" onclick="location.href='battle.html?id=${b.id}'">
         <h3>${escapeHtml(b.name)}</h3>
         <div class="battle-date">${escapeHtml(b.startDate || '')} ~ ${escapeHtml(b.endDate || '')}</div>
         <div class="battle-card-desc">${escapeHtml(b.description || '')}</div>
-        <div class="battle-significance">${escapeHtml(b.significance || '')}</div>
-        <div style="margin-top:10px;font-size:13px;color:var(--c-text-3);display:flex;justify-content:space-between;">
-          <span>${escapeHtml(b.location || '')}</span>
-          <span class="recording-count">${b.recordingCount || 0} 条口述</span>
-        </div>
+        ${b.significance ? `<div class="battle-significance">${escapeHtml(b.significance)}</div>` : ''}
       </div>
     `).join('');
   } catch (e) { document.getElementById('battlesList').innerHTML = `<div class="empty-state"><p>加载失败</p></div>`; }
@@ -150,6 +205,5 @@ async function init() {
   loadBattles();
   loadUnits();
   loadRecordings();
-  loadTags();
 }
 init();

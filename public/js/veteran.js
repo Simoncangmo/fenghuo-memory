@@ -39,24 +39,24 @@ async function loadVeteranDetail() {
         </div>
       </div>
 
-      <!-- 个人档案 -->
+      <!-- 他是谁 -->
       <div class="profile-box">
-        <h2>个人档案</h2>
+        <h2>他是谁</h2>
         <div class="profile-info">
           <div class="info-item"><div class="label">姓名</div><div class="value">${escapeHtml(veteran.name)}</div></div>
           <div class="info-item"><div class="label">籍贯</div><div class="value">${escapeHtml(veteran.hometown || '不详')}</div></div>
           <div class="info-item"><div class="label">出生年份</div><div class="value">${veteran.birthYear ? veteran.birthYear : '不详'}</div></div>
-          <div class="info-item"><div class="label">部队番号</div><div class="value">${escapeHtml(veteran.militaryUnit || '未知')}</div></div>
+          <div class="info-item"><div class="label">所属部队</div><div class="value">${escapeHtml(veteran.militaryUnit || '未知')}</div></div>
           <div class="info-item"><div class="label">军衔</div><div class="value">${escapeHtml(veteran.rank || '未知')}</div></div>
           <div class="info-item"><div class="label">口述记录</div><div class="value">${recordings.length} 条</div></div>
         </div>
         <div class="profile-bio">${escapeHtml(veteran.bio || '暂无简介')}</div>
       </div>
 
-      <!-- 生平编年史时间轴 -->
+      <!-- 他的大事记时间轴 -->
       ${veteran.timeline && veteran.timeline.length ? `
         <div class="profile-box">
-          <h2>生平编年史</h2>
+          <h2>他的大事记</h2>
           <div class="timeline">
             ${veteran.timeline.map(t => `
               <div class="timeline-item type-${t.type || 'milestone'}">
@@ -68,10 +68,10 @@ async function loadVeteranDetail() {
         </div>
       ` : ''}
 
-      <!-- 参与战役 -->
+      <!-- 他参加过的战役 -->
       ${battles.length || (veteran.customBattles && veteran.customBattles.length) ? `
         <div class="profile-box">
-          <h2>参与战役</h2>
+          <h2>他参加过的战役</h2>
           <div class="card-grid">
             ${battles.map(b => `
               <div class="battle-card" onclick="location.href='battle.html?id=${b.id}'">
@@ -122,10 +122,10 @@ async function loadVeteranDetail() {
         </div>
       ` : ''}
 
-      <!-- 网状人物关系图谱 -->
+      <!-- 人物关系图谱 -->
       ${relationships.length ? `
         <div class="profile-box">
-          <h2>人物关系图谱</h2>
+          <h2>人物关系图谱：遇见了谁、和谁一起战斗、失去了谁</h2>
           <div class="relation-graph">
             ${relationships.map(rel => `
               <div class="relation-node ${rel.relatedType}">

@@ -129,6 +129,9 @@ img { max-width: 100%; display: block; }
 /* === 卡片网格 === */
 .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 40px; }
 
+/* === 老兵两列网格 === */
+.veteran-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px; }
+
 /* === 老兵卡片 === */
 .veteran-card {
   background: var(--c-surface); border-radius: var(--radius); padding: 24px;
@@ -136,17 +139,12 @@ img { max-width: 100%; display: block; }
   border-left: 4px solid var(--c-mil-green); transition: all .2s; cursor: pointer;
 }
 .veteran-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
-.veteran-card-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 14px; }
-.veteran-avatar {
-  width: 60px; height: 60px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--c-mil-green), var(--c-mil-green-light));
-  color: #E8E2D4; display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-serif); font-size: 24px; font-weight: bold; flex-shrink: 0;
-}
-.veteran-card-info h3 { font-family: var(--font-serif); font-size: 20px; margin-bottom: 4px; }
-.veteran-card-info .unit { font-size: 14px; color: var(--c-text-2); }
-.veteran-card-bio { font-size: 14px; color: var(--c-text-2); line-height: 1.7; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 14px; }
-.veteran-card-footer { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--c-text-3); }
+.veteran-card-name { font-family: var(--font-serif); font-size: 22px; margin-bottom: 10px; color: var(--c-dark); }
+.veteran-card-avatar { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 14px; border: 3px solid var(--c-gold); background: var(--c-bg-alt); box-shadow: var(--shadow-sm); }
+.veteran-card-quote { font-size: 15px; color: var(--c-text-2); line-height: 1.8; margin-bottom: 12px; padding: 14px 18px; background: var(--c-bg); border-radius: 6px; border-left: 3px solid var(--c-gold); }
+.veteran-card-location { font-size: 14px; color: var(--c-earth); margin-bottom: 14px; }
+.veteran-card-link { font-size: 15px; color: var(--c-mil-green); font-weight: 600; text-decoration: none; display: inline-block; transition: color .2s; }
+.veteran-card-link:hover { color: var(--c-mil-green-light); text-decoration: underline; }
 .recording-count { background: var(--c-bg-alt); padding: 4px 12px; border-radius: 12px; color: var(--c-mil-green); font-weight: 600; }
 .status-alive { color: var(--c-mil-green); font-weight: 600; }
 .status-deceased { color: var(--c-text-3); }
@@ -193,9 +191,6 @@ img { max-width: 100%; display: block; }
 .tag-cloud-item { font-size: 14px; padding: 6px 16px; border-radius: 18px; background: var(--c-bg-alt); color: var(--c-text-2); cursor: pointer; transition: all .2s; display: inline-flex; align-items: center; gap: 4px; }
 .tag-cloud-item:hover { background: var(--c-mil-green); color: #E8E2D4; }
 .tag-cloud-item .count { font-size: 12px; opacity: .6; }
-
-/* === 双栏 === */
-.dual-column { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-bottom: 40px; }
 
 /* === 详情头部 === */
 .detail-header { background: linear-gradient(135deg, var(--c-dark), var(--c-dark-2)); color: #D4CFC0; padding: 44px 28px; border-radius: 0 0 var(--radius-lg) var(--radius-lg); margin-bottom: 36px; border-bottom: 4px solid var(--c-gold); }
@@ -431,7 +426,7 @@ img { max-width: 100%; display: block; }
   .stats-bar { padding: 16px 12px; }
   .stat-item { padding: 6px 12px; }
   .stat-value { font-size: 24px; }
-  .dual-column { grid-template-columns: 1fr; }
+  .veteran-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .profile-info { grid-template-columns: 1fr; }
   .container { padding: 24px 12px; }
