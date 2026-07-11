@@ -19,15 +19,6 @@ function performSearch() {
   if (q) window.location.href = `search.html?q=${encodeURIComponent(q)}`;
 }
 
-async function loadStats() {
-  try {
-    const s = await api('/api/stats');
-    document.getElementById('statVeterans').textContent = s.veteranCount;
-    document.getElementById('statRecordings').textContent = s.recordingCount;
-    document.getElementById('statEvidence').textContent = s.evidenceCount;
-  } catch (e) { console.error(e); }
-}
-
 async function preloadCaches() {
   try {
     const [veterans, battles] = await Promise.all([api('/api/veterans'), api('/api/battles')]);
@@ -45,10 +36,11 @@ function getBattleName(r) {
 
 async function loadVeterans() {
   try {
-    const [veterans, recordings, battles] = await Promise.all([
+    const [veterans, recordings, battles, evidence] = await Promise.all([
       api('/api/veterans'),
       api('/api/recordings'),
-      api('/api/battles')
+      api('/api/battles'),
+      api('/api/evidence')
     ]);
     const c = document.getElementById('veteransList');
     c.classList.remove('loading');
@@ -61,6 +53,8 @@ async function loadVeterans() {
     c.innerHTML = veterans.map(v => {
       // Find veteran's recordings
       const vetRecordings = recordings.filter(r => r.veteranIds && r.veteranIds.includes(v.id));
+      // Find veteran's evidence
+      const vetEvidence = evidence.filter(e => e.veteranId === v.id);
 
       // Extract a quote from recordings
       let quote = '';
@@ -118,6 +112,10 @@ async function loadVeterans() {
           <img class="veteran-card-avatar" src="/images/avatar-placeholder.png" alt="${escapeHtml(v.name)}">
           ${quote ? `<div class="veteran-card-quote">"${escapeHtml(quote)}"</div>` : ''}
           <div class="veteran-card-location">${escapeHtml(locationStr)}</div>
+          <div class="veteran-card-stats">
+            <span class="stat-tag">口述记录 ${vetRecordings.length} 条</span>
+            <span class="stat-tag">物件照片 ${vetEvidence.length} 件</span>
+          </div>
           <a href="veteran.html?id=${v.id}" class="veteran-card-link" onclick="event.stopPropagation()">${linkText}</a>
         </div>
       `;
@@ -185,18 +183,7 @@ async function loadRecordings() {
   } catch (e) { document.getElementById('recordingsList').innerHTML = `<div class="empty-state"><p>加载失败</p></div>`; }
 }
 
-async function loadTags() {
-  try {
-    const tags = await api('/api/tags');
-    const c = document.getElementById('tagCloud');
-    c.classList.remove('loading');
-    if (!tags.length) { c.innerHTML = '<span style="color:var(--c-text-3)">暂无标签</span>'; return; }
-    c.innerHTML = tags.map(t => `<span class="tag-cloud-item" onclick="location.href='search.html?q=${encodeURIComponent(t.name)}'">${escapeHtml(t.name)} <span class="count">(${t.count})</span></span>`).join('');
-  } catch (e) { document.getElementById('tagCloud').innerHTML = '<span style="color:var(--c-text-3)">加载失败</span>'; }
-}
-
 async function init() {
-  loadStats();
   await preloadCaches();
   loadVeterans();
   loadBattles();
