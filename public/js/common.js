@@ -104,7 +104,7 @@ function renderNavbar(activePage) {
     { href: 'index.html', key: 'home', label: '首页' },
     { href: 'search.html', key: 'search', label: '时空检索' },
     { href: 'index.html#units', key: 'units', label: '番号百科' },
-    { href: 'index.html#battles', key: 'battles', label: '战役地图' },
+    { href: 'index.html#battles', key: 'battles', label: '战役记录' },
     { href: 'index.html#recordings', key: 'recordings', label: '口述记录' },
   ];
 

@@ -43,13 +43,18 @@
     .unit-dropdown .dd-honor { font-size: 12px; color: var(--c-gold); margin-top: 2px; }
     .unit-dropdown .dd-level { font-size: 12px; color: var(--c-text-muted); }
 
-    /* 战役多选 */
-    .battle-chips { display: flex; flex-wrap: wrap; gap: 8px; }
-    .battle-chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border: 1px solid var(--c-border); border-radius: 20px; font-size: 14px; cursor: pointer; transition: all 0.2s; background: var(--c-bg); color: var(--c-text-secondary); }
-    .battle-chip:hover { border-color: var(--c-gold); }
-    .battle-chip.selected { background: var(--c-mil-green); color: #fff; border-color: var(--c-mil-green); }
-    .battle-chip.custom { background: rgba(168,136,48,0.1); border-color: var(--c-gold); color: var(--c-gold); cursor: default; }
-    .battle-chip.custom .chip-remove { cursor: pointer; font-size: 16px; line-height: 1; }
+    /* 战役搜索与选择 */
+    .battle-search-wrap { position: relative; }
+    .battle-dropdown { position: absolute; top: 100%; left: 0; right: 0; z-index: 10; background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 8px; box-shadow: var(--shadow); max-height: 280px; overflow-y: auto; display: none; }
+    .battle-dropdown .dd-item { padding: 10px 14px; cursor: pointer; border-bottom: 1px solid var(--c-border-light); }
+    .battle-dropdown .dd-item:last-child { border-bottom: none; }
+    .battle-dropdown .dd-item:hover { background: var(--c-bg); }
+    .battle-dropdown .dd-name { font-size: 15px; color: var(--c-text); }
+    .battle-dropdown .dd-date { font-size: 12px; color: var(--c-text-muted); }
+    .selected-battles { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .selected-battle-tag { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: var(--c-mil-green); color: #fff; border-radius: 20px; font-size: 14px; }
+    .selected-battle-tag .tag-remove { cursor: pointer; font-size: 16px; line-height: 1; }
+    .selected-battle-tag.custom { background: rgba(168,136,48,0.15); color: var(--c-gold); border: 1px solid var(--c-gold); }
     .battle-custom-input-wrap { margin-top: 16px; display: flex; gap: 10px; align-items: center; }
     .battle-custom-input-wrap input { flex: 1; padding: 10px 14px; font-size: 15px; border: 1px dashed var(--c-border); border-radius: 8px; background: var(--c-bg); color: var(--c-text); }
     .battle-custom-input-wrap input:focus { outline: none; border-color: var(--c-gold); border-style: solid; }
@@ -163,12 +168,17 @@
     <!-- 参战经历 -->
     <div class="form-section">
       <h2>参战经历（可多选）</h2>
-      <div id="battleChips" class="battle-chips">
-        <span style="color:var(--c-text-muted);font-size:14px;">加载中...</span>
+      <div class="form-field">
+        <label>搜索并选择战役</label>
+        <div class="battle-search-wrap">
+          <input type="text" id="vBattleSearch" placeholder="输入战役名称搜索，如：台儿庄、淞沪、长沙..." autocomplete="off">
+          <div id="battleDropdown" class="battle-dropdown"></div>
+        </div>
+        <div class="hint">输入关键字搜索战役，点击选择；可多选</div>
       </div>
-      <div class="hint">点击选择该老兵参加过的战役，可多选</div>
+      <div id="selectedBattles" class="selected-battles"></div>
       <div class="battle-custom-input-wrap">
-        <input type="text" id="customBattleInput" placeholder="如果列表中没有，请在此输入战役名称..." maxlength="40">
+        <input type="text" id="customBattleInput" placeholder="如果搜索不到，请在此输入战役名称..." maxlength="40">
         <button onclick="addCustomBattle()">+ 添加自定义战役</button>
       </div>
       <div class="hint">若数据库中暂无该战役记录，可在此手动输入（如：豫中会战、滇缅反击战等）</div>
@@ -201,6 +211,8 @@
       <a href="/admin.html" class="modal-link secondary">继续录入</a>
     </div>
   </div>
+
+  <div id="footer"></div>
 
   <script src="/js/common.js"></script>
   <script src="/js/admin.js"></script>

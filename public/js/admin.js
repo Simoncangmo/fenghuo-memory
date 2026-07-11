@@ -25,12 +25,14 @@ const TIMELINE_TYPES = [
 
 // === 初始化 ===
 async function init() {
+  // 渲染导航栏和页脚
+  initPage('admin');
+
   // 加载战役列表
   try {
     allBattles = await api('/api/battles');
-    renderCustomBattles();
   } catch (e) {
-    document.getElementById('battleChips').innerHTML = '<span style="color:var(--c-danger);">战役列表加载失败</span>';
+    console.error('战役列表加载失败', e);
   }
 
   // 添加一个默认时间节点
@@ -46,10 +48,23 @@ async function init() {
     unitTimer = setTimeout(() => searchUnits(q), 300);
   });
 
+  // 战役搜索
+  let battleTimer = null;
+  document.getElementById('vBattleSearch').addEventListener('input', function() {
+    clearTimeout(battleTimer);
+    const q = this.value.trim();
+    const dropdown = document.getElementById('battleDropdown');
+    if (!q) { dropdown.style.display = 'none'; return; }
+    battleTimer = setTimeout(() => searchBattles(q), 300);
+  });
+
   // 点击外部关闭下拉
   document.addEventListener('click', function(e) {
     if (!e.target.closest('.unit-search-wrap')) {
       document.getElementById('unitDropdown').style.display = 'none';
+    }
+    if (!e.target.closest('.battle-search-wrap')) {
+      document.getElementById('battleDropdown').style.display = 'none';
     }
   });
 
@@ -172,18 +187,73 @@ function clearUnitSelection() {
   document.getElementById('selectedUnitHonor').textContent = '';
 }
 
-// === 战役多选 ===
-// renderCustomBattles 已在下方"自定义战役"区域统一定义，同时渲染已有战役和自定义战役
-
-function toggleBattle(el, id) {
-  const idx = selectedBattles.indexOf(id);
-  if (idx > -1) {
-    selectedBattles.splice(idx, 1);
-    el.classList.remove('selected');
-  } else {
-    selectedBattles.push(id);
-    el.classList.add('selected');
+// === 战役搜索与选择 ===
+async function searchBattles(query) {
+  const dropdown = document.getElementById('battleDropdown');
+  try {
+    // 过滤已有战役（排除已选中的）
+    const filtered = allBattles.filter(b =>
+      !selectedBattles.includes(b.id) &&
+      (b.name.includes(query) ||
+       (b.startDate && b.startDate.includes(query)) ||
+       (b.description && b.description.includes(query)))
+    );
+    if (filtered.length === 0) {
+      dropdown.innerHTML = '<div class="dd-item" style="color:var(--c-text-muted);">未找到匹配的战役，可使用下方自定义输入</div>';
+      dropdown.style.display = 'block';
+      return;
+    }
+    let html = '';
+    filtered.forEach(b => {
+      html += '<div class="dd-item" onclick="selectBattle(\'' + b.id + '\', \'' + escapeHtml(b.name) + '\')">';
+      html += '<div class="dd-name">' + escapeHtml(b.name) + '</div>';
+      if (b.startDate || b.endDate) {
+        html += '<div class="dd-date">' + escapeHtml(b.startDate || '') + ' ~ ' + escapeHtml(b.endDate || '') + '</div>';
+      }
+      html += '</div>';
+    });
+    dropdown.innerHTML = html;
+    dropdown.style.display = 'block';
+  } catch (e) {
+    dropdown.style.display = 'none';
   }
+}
+
+function selectBattle(id, name) {
+  if (selectedBattles.includes(id)) return;
+  selectedBattles.push(id);
+  document.getElementById('vBattleSearch').value = '';
+  document.getElementById('battleDropdown').style.display = 'none';
+  renderSelectedBattles();
+}
+
+function removeBattle(id) {
+  const idx = selectedBattles.indexOf(id);
+  if (idx > -1) selectedBattles.splice(idx, 1);
+  renderSelectedBattles();
+}
+
+function renderSelectedBattles() {
+  const container = document.getElementById('selectedBattles');
+  if (selectedBattles.length === 0 && customBattles.length === 0) {
+    container.innerHTML = '<span style="color:var(--c-text-muted);font-size:14px;">尚未选择任何战役</span>';
+    return;
+  }
+  let html = '';
+  // 已选战役（来自数据库）
+  selectedBattles.forEach(id => {
+    const b = allBattles.find(b => b.id === id);
+    if (b) {
+      html += '<div class="selected-battle-tag">' + escapeHtml(b.name) +
+        ' <span class="tag-remove" onclick="removeBattle(\'' + id + '\')">×</span></div>';
+    }
+  });
+  // 自定义战役
+  customBattles.forEach((name, i) => {
+    html += '<div class="selected-battle-tag custom">' + escapeHtml(name) +
+      ' <span class="tag-remove" onclick="removeCustomBattle(' + i + ')">×</span></div>';
+  });
+  container.innerHTML = html;
 }
 
 // === 自定义战役 ===
@@ -193,43 +263,24 @@ function addCustomBattle() {
   if (!name) { alert('请输入战役名称'); return; }
   // 去重：检查自定义列表和已有战役
   if (customBattles.includes(name)) { alert('已添加过该战役'); return; }
-  if (allBattles.some(b => b.name === name)) { alert('该战役已在列表中，请直接点击选择'); return; }
+  if (allBattles.some(b => b.name === name)) {
+    // 如果战役在数据库中存在，直接选中
+    const existing = allBattles.find(b => b.name === name);
+    if (!selectedBattles.includes(existing.id)) {
+      selectedBattles.push(existing.id);
+    }
+    input.value = '';
+    renderSelectedBattles();
+    return;
+  }
   customBattles.push(name);
   input.value = '';
-  renderCustomBattles();
+  renderSelectedBattles();
 }
 
 function removeCustomBattle(idx) {
   customBattles.splice(idx, 1);
-  renderCustomBattles();
-}
-
-function renderCustomBattles() {
-  const container = document.getElementById('battleChips');
-  // 先渲染已有战役
-  let html = '';
-  if (allBattles.length === 0 && customBattles.length === 0) {
-    container.innerHTML = '<span style="color:var(--c-text-muted);font-size:14px;">暂无战役数据</span>';
-    return;
-  }
-  html += allBattles.map(b =>
-    '<div class="battle-chip" data-id="' + b.id + '" onclick="toggleBattle(this, \'' + b.id + '\')">' +
-    escapeHtml(b.name) +
-    '</div>'
-  ).join('');
-  // 再渲染自定义战役
-  html += customBattles.map((name, i) =>
-    '<div class="battle-chip custom">' +
-    escapeHtml(name) +
-    ' <span class="chip-remove" onclick="event.stopPropagation();removeCustomBattle(' + i + ')">×</span>' +
-    '</div>'
-  ).join('');
-  container.innerHTML = html;
-  // 恢复已有战役的选中状态
-  selectedBattles.forEach(id => {
-    const chip = container.querySelector('.battle-chip[data-id="' + id + '"]');
-    if (chip) chip.classList.add('selected');
-  });
+  renderSelectedBattles();
 }
 
 // === 时间线编辑 ===
@@ -361,11 +412,12 @@ function resetForm() {
   document.getElementById('vUnitSearch').style.opacity = '1';
   document.getElementById('vUnitSearch').placeholder = '输入数字或番号名称，如：74、三十一师、第十军...';
   document.getElementById('vUnitUnknown').checked = false;
+  document.getElementById('vBattleSearch').value = '';
   document.getElementById('customBattleInput').value = '';
   clearUnitSelection();
   selectedBattles = [];
   customBattles = [];
-  renderCustomBattles();
+  renderSelectedBattles();
   timelineEntries = [];
   renderTimeline();
   addTimelineEntry();
