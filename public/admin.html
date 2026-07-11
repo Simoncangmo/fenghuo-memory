@@ -130,12 +130,12 @@
   <div class="admin-container">
     <div class="admin-header">
       <h1>抗战老兵信息录入</h1>
-      <p>填写老兵基本信息、部队番号、参战经历与生平编年史，提交后自动生成老兵档案</p>
+      <p>填写老兵基本信息、所属部队、参加过的战役与大事记，提交后自动生成老兵档案</p>
     </div>
 
     <!-- 基本信息表单 -->
     <div class="form-section">
-      <h2>基本信息</h2>
+      <h2>他是谁</h2>
       <div class="form-row">
         <div class="form-field">
           <label>姓名 <span class="required">*</span></label>
@@ -174,9 +174,9 @@
 
     <!-- 部队番号 -->
     <div class="form-section">
-      <h2>部队番号</h2>
+      <h2>所属部队</h2>
       <div class="form-field">
-        <label>搜索并选择部队番号 <span class="required">*</span></label>
+        <label>搜索并选择所属部队 <span class="required">*</span></label>
         <div style="display:flex;gap:10px;align-items:center;">
           <div class="unit-search-wrap" style="flex:1;">
             <input type="text" id="vUnitSearch" placeholder="输入数字或番号名称，如：74、三十一师、第十军..." autocomplete="off">
@@ -195,7 +195,7 @@
 
     <!-- 参战经历 -->
     <div class="form-section">
-      <h2>参战经历（可多选）</h2>
+      <h2>他参加过的战役（可多选）？</h2>
       <div class="form-field">
         <label>搜索并选择战役</label>
         <div class="battle-search-wrap">
@@ -214,7 +214,7 @@
 
     <!-- 生平编年史 -->
     <div class="form-section">
-      <h2>生平编年史</h2>
+      <h2>他的大事记</h2>
       <div id="timelineEditor" class="timeline-editor">
         <!-- 动态生成 -->
       </div>
