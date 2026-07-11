@@ -23,10 +23,7 @@ async function loadStats() {
   try {
     const s = await api('/api/stats');
     document.getElementById('statVeterans').textContent = s.veteranCount;
-    document.getElementById('statBattles').textContent = s.battleCount;
-    document.getElementById('statUnits').textContent = s.unitCount;
     document.getElementById('statRecordings').textContent = s.recordingCount;
-    document.getElementById('statVolunteers').textContent = s.volunteerCount;
     document.getElementById('statEvidence').textContent = s.evidenceCount;
   } catch (e) { console.error(e); }
 }

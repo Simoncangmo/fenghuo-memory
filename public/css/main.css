@@ -106,13 +106,26 @@ img { max-width: 100%; display: block; }
 .search-suggestions { margin-top: 16px; font-size: 13px; color: #8A877E; }
 .search-suggestions a { color: var(--c-gold-light); margin: 0 6px; }
 
-/* === 统计栏 === */
-.stats-bar { display: flex; justify-content: center; background: var(--c-surface); border-bottom: 1px solid var(--c-border); padding: 22px 28px; }
-.stats-container { max-width: var(--max-w); display: flex; justify-content: space-around; width: 100%; flex-wrap: wrap; gap: 12px; }
-.stat-item { text-align: center; padding: 6px 28px; border-right: 1px solid var(--c-border-light); }
-.stat-item:last-child { border-right: none; }
-.stat-value { font-family: var(--font-serif); font-size: 32px; font-weight: bold; color: var(--c-mil-green); }
-.stat-label { font-size: 14px; color: var(--c-text-2); margin-top: 2px; }
+/* === 统计栏（三卡片式） === */
+.stats-bar { display: flex; justify-content: center; background: var(--c-bg); padding: 28px 20px 12px; }
+.stats-container { max-width: var(--max-w); width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.stat-card {
+  display: flex; align-items: center; gap: 18px;
+  background: var(--c-surface); border: 1px solid var(--c-border-light);
+  border-radius: var(--radius-lg); padding: 22px 26px;
+  box-shadow: var(--shadow-sm); text-decoration: none; cursor: pointer;
+  transition: all .2s ease;
+}
+.stat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--c-gold-light); text-decoration: none; }
+.stat-number {
+  font-family: var(--font-serif); font-size: 40px; font-weight: bold;
+  color: var(--c-mil-green); line-height: 1; min-width: 50px;
+}
+.stat-content { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.stat-title { font-size: 18px; font-weight: bold; color: var(--c-dark); }
+.stat-subtitle { font-size: 14px; color: var(--c-text-3); }
+.stat-arrow { font-size: 26px; color: var(--c-gold); line-height: 1; transition: transform .2s; }
+.stat-card:hover .stat-arrow { transform: translateX(4px); }
 
 /* === 容器 === */
 .container { max-width: var(--max-w); margin: 0 auto; padding: 36px 28px; }
@@ -423,9 +436,13 @@ img { max-width: 100%; display: block; }
   .navbar-links a { padding: 6px 10px; font-size: 13px; }
   .hero h1 { font-size: 28px; }
   .hero { padding: 40px 16px 30px; }
-  .stats-bar { padding: 16px 12px; }
-  .stat-item { padding: 6px 12px; }
-  .stat-value { font-size: 24px; }
+  .stats-bar { padding: 20px 16px 10px; }
+  .stats-container { grid-template-columns: 1fr; }
+  .stat-card { padding: 18px 20px; gap: 14px; }
+  .stat-number { font-size: 32px; min-width: 42px; }
+  .stat-title { font-size: 16px; }
+  .stat-subtitle { font-size: 13px; }
+  .stat-arrow { font-size: 22px; }
   .veteran-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .profile-info { grid-template-columns: 1fr; }
