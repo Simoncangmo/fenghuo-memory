@@ -46,6 +46,10 @@ async function loadVeterans() {
     c.classList.remove('loading');
     if (!veterans.length) { c.innerHTML = '<div class="empty-state"><div class="icon">★</div><p>暂无老兵档案</p></div>'; return; }
 
+    // Update title with veteran count
+    const countEl = document.getElementById('veteranCountTitle');
+    if (countEl) countEl.textContent = `老兵档案 · ${veterans.length} 位`;
+
     // Build battle name lookup
     const battleMap = {};
     battles.forEach(b => battleMap[b.id] = b.name);
@@ -108,8 +112,10 @@ async function loadVeterans() {
 
       return `
         <div class="veteran-card" onclick="location.href='veteran.html?id=${v.id}'">
-          <h3 class="veteran-card-name">${escapeHtml(v.name)}</h3>
-          <img class="veteran-card-avatar" src="/images/avatar-placeholder.png" alt="${escapeHtml(v.name)}">
+          <div class="veteran-card-header">
+            <img class="veteran-card-avatar" src="/images/avatar-placeholder.png" alt="${escapeHtml(v.name)}">
+            <h3 class="veteran-card-name">${escapeHtml(v.name)}</h3>
+          </div>
           ${quote ? `<div class="veteran-card-quote">"${escapeHtml(quote)}"</div>` : ''}
           <div class="veteran-card-location">${escapeHtml(locationStr)}</div>
           <div class="veteran-card-stats">

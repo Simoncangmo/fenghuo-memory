@@ -185,6 +185,11 @@ async function loadVeteranDetail() {
     btn.innerHTML = renderCorrectionBtn('veteran', id);
     document.getElementById('mainContent').appendChild(btn.firstElementChild);
 
+    // 注入分享按钮
+    const shareBtn = document.createElement('div');
+    shareBtn.innerHTML = renderShareBtn(veteran.name);
+    document.getElementById('mainContent').appendChild(shareBtn.firstElementChild);
+
     // 滚动到指定录音
     setTimeout(() => {
       const hash = window.location.hash;

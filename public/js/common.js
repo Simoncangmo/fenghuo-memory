@@ -156,6 +156,129 @@ function renderCorrectionBtn(targetType, targetId) {
   return `<button class="correction-btn" onclick="submitCorrection('${targetType}','${targetId}')">补充史料 / 纠错</button>`;
 }
 
+// 分享按钮
+let _shareVeteranName = '';
+function renderShareBtn(veteranName) {
+  _shareVeteranName = veteranName || '';
+  return `<button class="share-btn" onclick="openShareModal()">分享</button>`;
+}
+
+function openShareModal() {
+  const existing = document.getElementById('shareOverlay');
+  if (existing) existing.remove();
+
+  const overlay = document.createElement('div');
+  overlay.id = 'shareOverlay';
+  overlay.className = 'share-overlay';
+  overlay.innerHTML = `
+    <div class="share-modal" onclick="event.stopPropagation()">
+      <h3>分享</h3>
+      <div class="share-options">
+        <div class="share-option" onclick="shareToWeChat('friend')">
+          <span class="share-opt-icon">💬</span>
+          <div>
+            <div class="share-opt-label">微信好友</div>
+            <div class="share-opt-desc">分享给微信好友</div>
+          </div>
+        </div>
+        <div class="share-option" onclick="shareToWeChat('moments')">
+          <span class="share-opt-icon">📢</span>
+          <div>
+            <div class="share-opt-label">朋友圈</div>
+            <div class="share-opt-desc">分享到微信朋友圈</div>
+          </div>
+        </div>
+        <div class="share-option" onclick="copyShareLink()">
+          <span class="share-opt-icon">🔗</span>
+          <div>
+            <div class="share-opt-label">复制链接</div>
+            <div class="share-opt-desc">复制页面链接到剪贴板</div>
+          </div>
+        </div>
+      </div>
+      <div class="share-close">
+        <button onclick="closeShareModal()">取消</button>
+      </div>
+    </div>
+  `;
+  overlay.addEventListener('click', () => closeShareModal());
+  document.body.appendChild(overlay);
+  setTimeout(() => overlay.classList.add('active'), 10);
+}
+
+function shareToWeChat(type) {
+  const url = window.location.href;
+  const shareText = _shareVeteranName
+    ? `这是${_shareVeteranName}抗战英雄的抗战记忆，来看一下吧 ${url}`
+    : `${document.title} - 烽火记忆 ${url}`;
+
+  // 移动端优先尝试原生分享
+  if (navigator.share) {
+    navigator.share({ title: document.title, url, text: shareText }).catch(() => {});
+    return;
+  }
+
+  // 桌面端：显示二维码引导
+  const tipText = type === 'friend'
+    ? '打开微信<strong>扫一扫</strong>识别下方二维码<br>在打开的页面点击右上角 <strong>···</strong> → 发送给朋友'
+    : '打开微信<strong>扫一扫</strong>识别下方二维码<br>在打开的页面点击右上角 <strong>···</strong> → 分享到朋友圈';
+
+  const modal = document.querySelector('.share-modal');
+  if (!modal) return;
+  modal.innerHTML = `
+    <h3>${type === 'friend' ? '分享至微信好友' : '分享至朋友圈'}</h3>
+    <div class="share-qr-box">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&margin=8&data=${encodeURIComponent(url)}" alt="二维码" width="200" height="200">
+      <div class="share-qr-tip">${tipText}</div>
+    </div>
+    <div class="share-close">
+      <button onclick="closeShareModal()">关闭</button>
+    </div>
+  `;
+}
+
+function copyShareLink() {
+  const url = window.location.href;
+  const shareText = _shareVeteranName
+    ? `这是${_shareVeteranName}抗战英雄的抗战记忆，来看一下吧\n${url}`
+    : url;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(shareText).then(() => {
+      showToast('链接已复制到剪贴板');
+      closeShareModal();
+    }).catch(() => {
+      fallbackCopy(shareText);
+    });
+  } else {
+    fallbackCopy(shareText);
+  }
+}
+
+function fallbackCopy(text) {
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.style.position = 'fixed';
+  textarea.style.opacity = '0';
+  document.body.appendChild(textarea);
+  textarea.select();
+  try {
+    document.execCommand('copy');
+    showToast('链接已复制到剪贴板');
+  } catch (e) {
+    showToast('复制失败，请手动复制链接', 'error');
+  }
+  document.body.removeChild(textarea);
+  closeShareModal();
+}
+
+function closeShareModal() {
+  const overlay = document.getElementById('shareOverlay');
+  if (overlay) {
+    overlay.classList.remove('active');
+    setTimeout(() => overlay.remove(), 250);
+  }
+}
+
 async function submitCorrection(targetType, targetId) {
   const name = prompt('您的姓名（或昵称）：');
   if (!name) return;
