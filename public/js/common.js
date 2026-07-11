@@ -124,7 +124,7 @@ function renderNavbar(activePage) {
         </div>
         <div class="navbar-links">
           ${linksHtml}
-          <a href="record.html" class="btn-record">+ 录入口述</a>
+          <a href="record.html" class="btn-record">+ 上传口述</a>
           <a href="admin.html" class="btn-record" style="background:var(--c-mil-green);">+ 老兵录入</a>
         </div>
       </div>
