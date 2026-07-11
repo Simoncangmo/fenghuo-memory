@@ -75,8 +75,36 @@ async function init() {
       addCustomBattle();
     }
   });
+
 }
 init();
+
+// === 出生年份实时校验 ===
+function checkBirthYear() {
+  const input = document.getElementById('vBirthYear');
+  const errorEl = document.getElementById('birthYearError');
+  const unknownChecked = document.getElementById('vBirthYearUnknown').checked;
+  const val = input.value.trim();
+  if (!val || unknownChecked) {
+    input.style.borderColor = '';
+    errorEl.style.display = 'none';
+    return;
+  }
+  // 必须是纯数字
+  if (!/^\d+$/.test(val)) {
+    input.style.borderColor = '#c0392b';
+    errorEl.style.display = 'block';
+    return;
+  }
+  const y = parseInt(val, 10);
+  if (y > 1945 || y < 1880) {
+    input.style.borderColor = '#c0392b';
+    errorEl.style.display = 'block';
+  } else {
+    input.style.borderColor = '';
+    errorEl.style.display = 'none';
+  }
+}
 
 // === "不详" 选项切换 ===
 function toggleUnknown(inputId, checkboxId) {
@@ -342,6 +370,10 @@ async function submitVeteran() {
   // 校验必填
   if (!name) { alert('请填写姓名'); return; }
   if (!birthYearUnknown && !birthYear) { alert('请填写出生年份或勾选"不详"'); return; }
+  if (!birthYearUnknown && birthYear) {
+    const y = parseInt(birthYear);
+    if (y > 1945 || y < 1880) { alert('出生年份有误，请核实'); return; }
+  }
   if (!hometownUnknown && !hometown) { alert('请填写籍贯或勾选"不详"'); return; }
   if (!unitUnknown && !selectedUnitId) { alert('请选择部队番号或勾选"不详"'); return; }
 

@@ -91,7 +91,7 @@
     .success-modal .modal-card .modal-close:hover { background: rgba(0,0,0,0.08); color: var(--c-text); }
     .success-modal .modal-icon { font-size: 44px; margin-bottom: 20px; }
     .success-modal .modal-title { font-family: var(--font-serif); font-size: 22px; color: var(--c-dark); margin-bottom: 16px; }
-    .success-modal .modal-desc { color: var(--c-text-secondary); font-size: 15px; line-height: 1.8; }
+    .success-modal .modal-desc { color: var(--c-text-secondary); font-size: 16px; font-weight: bold; line-height: 1.8; }
 
     @media (max-width: 640px) {
       .form-row { flex-direction: column; gap: 0; }
@@ -150,8 +150,9 @@
         <div class="form-field">
           <label>出生年份 <span class="required">*</span></label>
           <div style="display:flex;gap:10px;align-items:center;">
-            <input type="number" id="vBirthYear" placeholder="如：1918" min="1890" max="1950" style="flex:1;">
-            <label class="unknown-toggle"><input type="checkbox" id="vBirthYearUnknown" onchange="toggleUnknown('vBirthYear','vBirthYearUnknown')"> 不详</label>
+            <input type="text" id="vBirthYear" placeholder="如：1918" style="flex:1;" oninput="checkBirthYear()" onchange="checkBirthYear()" onkeyup="checkBirthYear()">
+            <label class="unknown-toggle"><input type="checkbox" id="vBirthYearUnknown" onchange="toggleUnknown('vBirthYear','vBirthYearUnknown');checkBirthYear()"> 不详</label>
+            <div id="birthYearError" style="display:none;color:#c0392b;font-size:16px;font-weight:bold;margin-top:4px;">出生年份有误，请核实</div>
           </div>
         </div>
         <div class="form-field">
@@ -241,7 +242,35 @@
 
   <div id="footer"></div>
 
-  <script src="/js/common.js"></script>
-  <script src="/js/admin.js"></script>
+  <!-- 出生年份校验函数（内联，不依赖外部JS缓存） -->
+  <script>
+    function checkBirthYear() {
+      var input = document.getElementById('vBirthYear');
+      var errorEl = document.getElementById('birthYearError');
+      var unknownChecked = document.getElementById('vBirthYearUnknown').checked;
+      var val = input.value.trim();
+      if (!val || unknownChecked) {
+        input.style.borderColor = '';
+        errorEl.style.display = 'none';
+        return;
+      }
+      if (!/^\d+$/.test(val)) {
+        input.style.borderColor = '#c0392b';
+        errorEl.style.display = 'block';
+        return;
+      }
+      var y = parseInt(val, 10);
+      if (y > 1945 || y < 1880) {
+        input.style.borderColor = '#c0392b';
+        errorEl.style.display = 'block';
+      } else {
+        input.style.borderColor = '';
+        errorEl.style.display = 'none';
+      }
+    }
+  </script>
+
+  <script src="/js/common.js?v=20260711"></script>
+  <script src="/js/admin.js?v=20260711d"></script>
 </body>
 </html>
