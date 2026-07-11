@@ -139,6 +139,7 @@ function addVeteran(veteran) {
     rank: veteran.rank || '',
     bio: veteran.bio || '',
     battleIds: veteran.battleIds || [],
+    customBattles: veteran.customBattles || [],
     timeline: veteran.timeline || [],
     birthPlace: veteran.birthPlace || null,
     photo: veteran.photo || '',
@@ -172,6 +173,32 @@ function addBattle(battle) {
   battles.push(newBattle);
   writeJSON('battles.json', battles);
   return newBattle;
+}
+
+// 将老兵ID关联到部队和战役
+function linkVeteranToRelations(veteranId, unitId, battleIds) {
+  // 关联到部队
+  if (unitId) {
+    const units = getUnits();
+    const unit = units.find(u => u.id === unitId);
+    if (unit) {
+      if (!unit.veteranIds) unit.veteranIds = [];
+      if (!unit.veteranIds.includes(veteranId)) unit.veteranIds.push(veteranId);
+      writeJSON('units.json', units);
+    }
+  }
+  // 关联到战役
+  if (battleIds && battleIds.length > 0) {
+    const battles = getBattles();
+    battleIds.forEach(bid => {
+      const battle = battles.find(b => b.id === bid);
+      if (battle) {
+        if (!battle.veteranIds) battle.veteranIds = [];
+        if (!battle.veteranIds.includes(veteranId)) battle.veteranIds.push(veteranId);
+      }
+    });
+    writeJSON('battles.json', battles);
+  }
 }
 
 // ======================== 番号操作 ========================
@@ -660,7 +687,7 @@ function autoCategorize(transcript) {
 
 module.exports = {
   // 老兵
-  getVeterans, getVeteranById, addVeteran,
+  getVeterans, getVeteranById, addVeteran, linkVeteranToRelations,
   // 战役
   getBattles, getBattleById, addBattle,
   // 番号

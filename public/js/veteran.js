@@ -1,6 +1,6 @@
 /**
  * veteran.js - 老兵个人百科主页（增强版）
- * 生平编年史 + 物证展厅 + 关系图谱 + 音频锚点 + 数字祭奠
+ * 生平编年史 + 物证展厅 + 关系图谱 + 音频锚点 + 向英雄致敬
  */
 initPage('veterans');
 
@@ -19,19 +19,21 @@ async function loadVeteranDetail() {
     document.title = `${veteran.name} · 烽火记忆`;
 
     const battleTags = battles.map(b => `<a href="battle.html?id=${b.id}" class="meta-tag">${escapeHtml(b.name)}</a>`).join('');
+    const customBattleTags = (veteran.customBattles || []).map(b => `<span class="meta-tag" style="border-color:var(--c-gold);color:var(--c-gold);">${escapeHtml(b)}</span>`).join('');
     const unitTag = unit ? `<a href="unit.html?id=${unit.id}" class="meta-tag">${escapeHtml(unit.shortName)}</a>` : '';
 
     document.getElementById('mainContent').innerHTML = `
       <div class="detail-header">
         <h1>${escapeHtml(veteran.name)}</h1>
         <div class="subtitle">
-          ${veteran.birthYear ? `${veteran.birthYear}年出生` : ''}${veteran.deathYear ? ` · ${veteran.deathYear}年辞世` : ' · 健在'} · ${escapeHtml(veteran.hometown || '')}
+          ${veteran.birthYear ? `${veteran.birthYear}年出生` : '出生年份不详'}${veteran.deathYear ? ` · ${veteran.deathYear}年辞世` : ' · 健在'} · ${escapeHtml(veteran.hometown || '籍贯不详')}
         </div>
         <div class="meta-tags">
           ${unitTag}
           <span class="meta-tag">${escapeHtml(veteran.militaryUnit || '')}</span>
           <span class="meta-tag">${escapeHtml(veteran.rank || '')}</span>
           ${battleTags}
+          ${customBattleTags}
           <span class="meta-tag">${recordings.length} 条口述</span>
           ${evidence.length ? `<span class="meta-tag">${evidence.length} 件物证</span>` : ''}
         </div>
@@ -42,8 +44,8 @@ async function loadVeteranDetail() {
         <h2>个人档案</h2>
         <div class="profile-info">
           <div class="info-item"><div class="label">姓名</div><div class="value">${escapeHtml(veteran.name)}</div></div>
-          <div class="info-item"><div class="label">籍贯</div><div class="value">${escapeHtml(veteran.hometown || '未知')}</div></div>
-          <div class="info-item"><div class="label">出生年份</div><div class="value">${veteran.birthYear || '未知'}</div></div>
+          <div class="info-item"><div class="label">籍贯</div><div class="value">${escapeHtml(veteran.hometown || '不详')}</div></div>
+          <div class="info-item"><div class="label">出生年份</div><div class="value">${veteran.birthYear ? veteran.birthYear : '不详'}</div></div>
           <div class="info-item"><div class="label">部队番号</div><div class="value">${escapeHtml(veteran.militaryUnit || '未知')}</div></div>
           <div class="info-item"><div class="label">军衔</div><div class="value">${escapeHtml(veteran.rank || '未知')}</div></div>
           <div class="info-item"><div class="label">口述记录</div><div class="value">${recordings.length} 条</div></div>
@@ -67,7 +69,7 @@ async function loadVeteranDetail() {
       ` : ''}
 
       <!-- 参与战役 -->
-      ${battles.length ? `
+      ${battles.length || (veteran.customBattles && veteran.customBattles.length) ? `
         <div class="profile-box">
           <h2>参与战役</h2>
           <div class="card-grid">
@@ -77,6 +79,12 @@ async function loadVeteranDetail() {
                 <div class="battle-date">${escapeHtml(b.startDate || '')} ~ ${escapeHtml(b.endDate || '')}</div>
                 <div class="battle-card-desc">${escapeHtml(b.description || '')}</div>
                 <div class="battle-significance">${escapeHtml(b.significance || '')}</div>
+              </div>
+            `).join('')}
+            ${(veteran.customBattles || []).map(b => `
+              <div class="battle-card" style="border-style:dashed;border-color:var(--c-gold);">
+                <h3>${escapeHtml(b)}</h3>
+                <div class="battle-card-desc" style="color:var(--c-text-muted);font-size:13px;">提交者补充记录</div>
               </div>
             `).join('')}
           </div>
@@ -133,9 +141,9 @@ async function loadVeteranDetail() {
         </div>
       ` : ''}
 
-      <!-- 数字祭奠 -->
+      <!-- 向英雄致敬 -->
       <div class="profile-box">
-        <h2>数字祭奠 ${veteran.deathYear ? '' : '· 祝福墙'}</h2>
+        <h2>向英雄致敬（我要点赞/献花）</h2>
         <div class="memorial-box">
           <div class="memorial-form">
             <input type="text" id="memVisitorName" placeholder="您的姓名（或昵称）" maxlength="20">
@@ -318,7 +326,7 @@ function clearHighlight(recId) {
   currentSegmentIndex = -1;
 }
 
-// 数字祭奠提交
+// 向英雄致敬提交
 async function submitMemorial(veteranId, type) {
   const name = document.getElementById('memVisitorName').value.trim();
   const message = document.getElementById('memMessage').value.trim();

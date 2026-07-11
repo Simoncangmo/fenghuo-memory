@@ -72,7 +72,10 @@ app.get('/api/veterans/:id', (req, res) => {
 });
 
 app.post('/api/veterans', (req, res) => {
-  res.status(201).json(store.addVeteran(req.body));
+  const newVeteran = store.addVeteran(req.body);
+  // 自动关联到部队和战役
+  store.linkVeteranToRelations(newVeteran.id, newVeteran.unitId, newVeteran.battleIds);
+  res.status(201).json(newVeteran);
 });
 
 // ======================== 战役 ========================

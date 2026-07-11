@@ -301,7 +301,7 @@ img { max-width: 100%; display: block; }
 .commander-role { font-size: 14px; color: var(--c-gold); }
 .commander-period { font-size: 13px; color: var(--c-text-3); margin-left: auto; }
 
-/* === 数字祭奠 === */
+/* === 向英雄致敬 === */
 .memorial-box { background: var(--c-surface); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow-sm); border: 1px solid var(--c-border-light); }
 .memorial-list { display: flex; flex-direction: column; gap: 16px; margin-top: 20px; }
 .memorial-item { display: flex; gap: 14px; padding: 16px; background: var(--c-bg); border-radius: 8px; border-left: 4px solid var(--c-gold); }

@@ -42,5 +42,16 @@
     "content": "张守义连队在台儿庄北门的坚守时间应为三天三夜",
     "status": "pending",
     "submittedAt": "2026-07-10T05:00:38.856Z"
+  },
+  {
+    "id": "cor_1783663758608_4a7bhl",
+    "targetType": "battle",
+    "targetId": "btl_001",
+    "submitterName": "jo",
+    "submitterContact": "",
+    "type": "correction",
+    "content": "是第三十二师和三十一师一起",
+    "status": "pending",
+    "submittedAt": "2026-07-10T06:09:18.608Z"
   }
 ]

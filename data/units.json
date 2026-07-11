@@ -6,20 +6,50 @@
     "number": 31,
     "level": "division",
     "parentId": "unit_army_2",
-    "aliases": ["三十一师", "第三十一师", "31师", "池峰城师"],
-    "commanders": [
-      { "name": "池峰城", "period": "1938", "role": "师长" },
-      { "name": "乜子彬", "period": "1938-1939", "role": "副师长" }
+    "aliases": [
+      "三十一师",
+      "第三十一师",
+      "31师",
+      "池峰城师"
     ],
-    "battles": ["btl_001", "btl_004"],
+    "commanders": [
+      {
+        "name": "池峰城",
+        "period": "1938",
+        "role": "师长"
+      },
+      {
+        "name": "乜子彬",
+        "period": "1938-1939",
+        "role": "副师长"
+      }
+    ],
+    "battles": [
+      "btl_001",
+      "btl_004"
+    ],
     "evolution": [
-      { "year": 1937, "event": "隶属第二集团军，驻防山东", "parentUnit": "第二集团军" },
-      { "year": 1938, "event": "参加台儿庄战役，师长池峰城率部坚守台儿庄", "parentUnit": "第二集团军" },
-      { "year": 1938, "event": "参加武汉会战，转战大别山", "parentUnit": "第二集团军" }
+      {
+        "year": 1937,
+        "event": "隶属第二集团军，驻防山东",
+        "parentUnit": "第二集团军"
+      },
+      {
+        "year": 1938,
+        "event": "参加台儿庄战役，师长池峰城率部坚守台儿庄",
+        "parentUnit": "第二集团军"
+      },
+      {
+        "year": 1938,
+        "event": "参加武汉会战，转战大别山",
+        "parentUnit": "第二集团军"
+      }
     ],
     "description": "第三十一师是台儿庄战役中的核心防守部队，师长池峰城率部死守台儿庄城寨，为战役胜利立下首功。该师在台儿庄战役中伤亡过半，但始终未退半步。",
     "honor": "台儿庄大捷首功部队",
-    "veteranIds": ["vet_001"]
+    "veteranIds": [
+      "vet_001"
+    ]
   },
   {
     "id": "unit_002",
@@ -28,19 +58,44 @@
     "number": 386,
     "level": "brigade",
     "parentId": "unit_129",
-    "aliases": ["三八六旅", "第三八六旅", "386旅", "陈赓旅"],
-    "commanders": [
-      { "name": "陈赓", "period": "1937-1945", "role": "旅长" },
-      { "name": "王新亭", "period": "1937-1945", "role": "政委" }
+    "aliases": [
+      "三八六旅",
+      "第三八六旅",
+      "386旅",
+      "陈赓旅"
     ],
-    "battles": ["btl_002"],
+    "commanders": [
+      {
+        "name": "陈赓",
+        "period": "1937-1945",
+        "role": "旅长"
+      },
+      {
+        "name": "王新亭",
+        "period": "1937-1945",
+        "role": "政委"
+      }
+    ],
+    "battles": [
+      "btl_002"
+    ],
     "evolution": [
-      { "year": 1937, "event": "由红四方面军改编，隶属八路军第一二九师", "parentUnit": "八路军第一二九师" },
-      { "year": 1940, "event": "参加百团大战，破袭正太铁路", "parentUnit": "八路军第一二九师" }
+      {
+        "year": 1937,
+        "event": "由红四方面军改编，隶属八路军第一二九师",
+        "parentUnit": "八路军第一二九师"
+      },
+      {
+        "year": 1940,
+        "event": "参加百团大战，破袭正太铁路",
+        "parentUnit": "八路军第一二九师"
+      }
     ],
     "description": "三八六旅是八路军一二九师主力旅，旅长陈赓。该旅在太行山区开展游击战，百团大战中担任破袭正太铁路的主力，被日军称为'专打三八六旅'。",
     "honor": "八路军百团大战主力旅",
-    "veteranIds": ["vet_002"]
+    "veteranIds": [
+      "vet_002"
+    ]
   },
   {
     "id": "unit_003",
@@ -49,20 +104,49 @@
     "number": 10,
     "level": "army",
     "parentId": null,
-    "aliases": ["第十军", "第十军", "10军", "李玉堂军"],
-    "commanders": [
-      { "name": "李玉堂", "period": "1939-1942", "role": "军长" },
-      { "name": "方先觉", "period": "1942-1944", "role": "军长" }
+    "aliases": [
+      "第十军",
+      "第十军",
+      "10军",
+      "李玉堂军"
     ],
-    "battles": ["btl_003"],
+    "commanders": [
+      {
+        "name": "李玉堂",
+        "period": "1939-1942",
+        "role": "军长"
+      },
+      {
+        "name": "方先觉",
+        "period": "1942-1944",
+        "role": "军长"
+      }
+    ],
+    "battles": [
+      "btl_003"
+    ],
     "evolution": [
-      { "year": 1939, "event": "隶属第九战区，驻防湖南", "parentUnit": "第九战区" },
-      { "year": 1941, "event": "参加第二次长沙会战，坚守捞刀河", "parentUnit": "第九战区" },
-      { "year": 1942, "event": "参加第三次长沙会战，守卫长沙城", "parentUnit": "第九战区" }
+      {
+        "year": 1939,
+        "event": "隶属第九战区，驻防湖南",
+        "parentUnit": "第九战区"
+      },
+      {
+        "year": 1941,
+        "event": "参加第二次长沙会战，坚守捞刀河",
+        "parentUnit": "第九战区"
+      },
+      {
+        "year": 1942,
+        "event": "参加第三次长沙会战，守卫长沙城",
+        "parentUnit": "第九战区"
+      }
     ],
     "description": "第十军是第九战区精锐部队，在三次长沙会战中均担任核心防守任务。军长李玉堂率部在长沙城下与日军反复争夺，为长沙会战的胜利做出了重大贡献。",
     "honor": "长沙保卫战核心部队",
-    "veteranIds": ["vet_003"]
+    "veteranIds": [
+      "vet_003"
+    ]
   },
   {
     "id": "unit_004",
@@ -71,18 +155,39 @@
     "number": 9,
     "level": "army",
     "parentId": null,
-    "aliases": ["第九军", "第九军", "9军"],
-    "commanders": [
-      { "name": "郝梦龄", "period": "1937", "role": "军长（殉国）" }
+    "aliases": [
+      "第九军",
+      "第九军",
+      "9军"
     ],
-    "battles": ["btl_005", "btl_004"],
+    "commanders": [
+      {
+        "name": "郝梦龄",
+        "period": "1937",
+        "role": "军长（殉国）"
+      }
+    ],
+    "battles": [
+      "btl_005",
+      "btl_004"
+    ],
     "evolution": [
-      { "year": 1937, "event": "参加淞沪会战，守罗店阵地", "parentUnit": "第十四集团军" },
-      { "year": 1938, "event": "参加武汉会战", "parentUnit": "第十四集团军" }
+      {
+        "year": 1937,
+        "event": "参加淞沪会战，守罗店阵地",
+        "parentUnit": "第十四集团军"
+      },
+      {
+        "year": 1938,
+        "event": "参加武汉会战",
+        "parentUnit": "第十四集团军"
+      }
     ],
     "description": "第九军在淞沪会战中负责罗店方向防御，战斗极为惨烈。军长郝梦龄在忻口战役中殉国，是抗战中牺牲的第一位军长。",
     "honor": "淞沪会战罗店守备部队",
-    "veteranIds": ["vet_004"]
+    "veteranIds": [
+      "vet_004"
+    ]
   },
   {
     "id": "unit_005",
@@ -91,18 +196,38 @@
     "number": 87,
     "level": "division",
     "parentId": "unit_army_71",
-    "aliases": ["八十七师", "第八十七师", "87师"],
-    "commanders": [
-      { "name": "王敬久", "period": "1937", "role": "师长" }
+    "aliases": [
+      "八十七师",
+      "第八十七师",
+      "87师"
     ],
-    "battles": ["btl_005"],
+    "commanders": [
+      {
+        "name": "王敬久",
+        "period": "1937",
+        "role": "师长"
+      }
+    ],
+    "battles": [
+      "btl_005"
+    ],
     "evolution": [
-      { "year": 1937, "event": "参加淞沪会战，守八字桥", "parentUnit": "第七十一军" },
-      { "year": 1937, "event": "参加南京保卫战，守雨花台", "parentUnit": "第七十一军" }
+      {
+        "year": 1937,
+        "event": "参加淞沪会战，守八字桥",
+        "parentUnit": "第七十一军"
+      },
+      {
+        "year": 1937,
+        "event": "参加南京保卫战，守雨花台",
+        "parentUnit": "第七十一军"
+      }
     ],
     "description": "第八十七师是淞沪会战中的主力师之一，师长王敬久。该师在八字桥与日军激战，后转战南京雨花台，伤亡惨重。",
     "honor": "淞沪会战八字桥守备部队",
-    "veteranIds": ["vet_005"]
+    "veteranIds": [
+      "vet_005"
+    ]
   },
   {
     "id": "unit_army_2",
@@ -111,13 +236,28 @@
     "number": 2,
     "level": "army_group",
     "parentId": null,
-    "aliases": ["第二集团军", "第2集团军", "孙连仲集团军"],
-    "commanders": [
-      { "name": "孙连仲", "period": "1937-1945", "role": "总司令" }
+    "aliases": [
+      "第二集团军",
+      "第2集团军",
+      "孙连仲集团军"
     ],
-    "battles": ["btl_001", "btl_004"],
+    "commanders": [
+      {
+        "name": "孙连仲",
+        "period": "1937-1945",
+        "role": "总司令"
+      }
+    ],
+    "battles": [
+      "btl_001",
+      "btl_004"
+    ],
     "evolution": [
-      { "year": 1938, "event": "台儿庄战役中担任中央兵团防守任务", "parentUnit": "第五战区" }
+      {
+        "year": 1938,
+        "event": "台儿庄战役中担任中央兵团防守任务",
+        "parentUnit": "第五战区"
+      }
     ],
     "description": "第二集团军由孙连仲任总司令，是台儿庄战役中的核心防守力量。其下属第三十一师死守台儿庄城寨，为战役胜利奠定了基础。",
     "honor": "",
@@ -130,19 +270,44 @@
     "number": 129,
     "level": "division",
     "parentId": null,
-    "aliases": ["一二九师", "第一二九师", "129师", "刘伯承师"],
-    "commanders": [
-      { "name": "刘伯承", "period": "1937-1945", "role": "师长" },
-      { "name": "邓小平", "period": "1937-1945", "role": "政委" }
+    "aliases": [
+      "一二九师",
+      "第一二九师",
+      "129师",
+      "刘伯承师"
     ],
-    "battles": ["btl_002"],
+    "commanders": [
+      {
+        "name": "刘伯承",
+        "period": "1937-1945",
+        "role": "师长"
+      },
+      {
+        "name": "邓小平",
+        "period": "1937-1945",
+        "role": "政委"
+      }
+    ],
+    "battles": [
+      "btl_002"
+    ],
     "evolution": [
-      { "year": 1937, "event": "由红四方面军改编，开赴太行山区", "parentUnit": "八路军" },
-      { "year": 1940, "event": "参加百团大战", "parentUnit": "八路军" }
+      {
+        "year": 1937,
+        "event": "由红四方面军改编，开赴太行山区",
+        "parentUnit": "八路军"
+      },
+      {
+        "year": 1940,
+        "event": "参加百团大战",
+        "parentUnit": "八路军"
+      }
     ],
     "description": "第一二九师是八路军三大主力师之一，师长刘伯承、政委邓小平。该师在太行山区建立抗日根据地，百团大战中担任重要角色。",
     "honor": "太行山抗日根据地主力",
-    "veteranIds": []
+    "veteranIds": [
+      "vet_1783699676205_nlaup7"
+    ]
   },
   {
     "id": "unit_army_71",
@@ -151,13 +316,27 @@
     "number": 71,
     "level": "army",
     "parentId": null,
-    "aliases": ["七十一军", "第七十一军", "71军"],
-    "commanders": [
-      { "name": "王敬久", "period": "1937-1938", "role": "军长" }
+    "aliases": [
+      "七十一军",
+      "第七十一军",
+      "71军"
     ],
-    "battles": ["btl_005"],
+    "commanders": [
+      {
+        "name": "王敬久",
+        "period": "1937-1938",
+        "role": "军长"
+      }
+    ],
+    "battles": [
+      "btl_005"
+    ],
     "evolution": [
-      { "year": 1937, "event": "参加淞沪会战", "parentUnit": "第三战区" }
+      {
+        "year": 1937,
+        "event": "参加淞沪会战",
+        "parentUnit": "第三战区"
+      }
     ],
     "description": "第七十一军是淞沪会战参战部队之一，下辖第八十七师等精锐部队。",
     "honor": "",
@@ -170,18 +349,53 @@
     "number": 74,
     "level": "army",
     "parentId": null,
-    "aliases": ["七十四军", "第七十四军", "74军", "王耀武军"],
-    "commanders": [
-      { "name": "俞济时", "period": "1937-1939", "role": "军长" },
-      { "name": "王耀武", "period": "1939-1944", "role": "军长" },
-      { "name": "施中诚", "period": "1944-1945", "role": "军长" }
+    "aliases": [
+      "七十四军",
+      "第七十四军",
+      "74军",
+      "王耀武军"
     ],
-    "battles": ["btl_003"],
+    "commanders": [
+      {
+        "name": "俞济时",
+        "period": "1937-1939",
+        "role": "军长"
+      },
+      {
+        "name": "王耀武",
+        "period": "1939-1944",
+        "role": "军长"
+      },
+      {
+        "name": "施中诚",
+        "period": "1944-1945",
+        "role": "军长"
+      }
+    ],
+    "battles": [
+      "btl_003"
+    ],
     "evolution": [
-      { "year": 1937, "event": "在浙江组建，下辖第五十一师、第五十八师", "parentUnit": "第三战区" },
-      { "year": 1939, "event": "改隶第九战区，王耀武升任军长", "parentUnit": "第九战区" },
-      { "year": 1941, "event": "第五十七师编入，形成三师编制", "parentUnit": "第九战区" },
-      { "year": 1943, "event": "参加常德会战，第五十七师死守常德城", "parentUnit": "第六战区" }
+      {
+        "year": 1937,
+        "event": "在浙江组建，下辖第五十一师、第五十八师",
+        "parentUnit": "第三战区"
+      },
+      {
+        "year": 1939,
+        "event": "改隶第九战区，王耀武升任军长",
+        "parentUnit": "第九战区"
+      },
+      {
+        "year": 1941,
+        "event": "第五十七师编入，形成三师编制",
+        "parentUnit": "第九战区"
+      },
+      {
+        "year": 1943,
+        "event": "参加常德会战，第五十七师死守常德城",
+        "parentUnit": "第六战区"
+      }
     ],
     "description": "第七十四军是抗战中国军最精锐的部队之一，被誉为'抗日铁军'。军长王耀武率领该军参加几乎所有重大会战，战功赫赫。下属第五十七师在常德会战中以八千余人对抗日军三万，被誉为'虎贲部队'。",
     "honor": "抗日铁军·虎贲部队",
@@ -194,14 +408,31 @@
     "number": 57,
     "level": "division",
     "parentId": "unit_006",
-    "aliases": ["五十七师", "第五十七师", "57师", "虎贲部队"],
+    "aliases": [
+      "五十七师",
+      "第五十七师",
+      "57师",
+      "虎贲部队"
+    ],
     "commanders": [
-      { "name": "余程万", "period": "1940-1943", "role": "师长" }
+      {
+        "name": "余程万",
+        "period": "1940-1943",
+        "role": "师长"
+      }
     ],
     "battles": [],
     "evolution": [
-      { "year": 1941, "event": "编入第七十四军", "parentUnit": "第七十四军" },
-      { "year": 1943, "event": "常德会战中死守常德城，师长余程万率八千将士对抗日军三万", "parentUnit": "第七十四军" }
+      {
+        "year": 1941,
+        "event": "编入第七十四军",
+        "parentUnit": "第七十四军"
+      },
+      {
+        "year": 1943,
+        "event": "常德会战中死守常德城，师长余程万率八千将士对抗日军三万",
+        "parentUnit": "第七十四军"
+      }
     ],
     "description": "第五十七师是第七十四军下辖精锐师，代号'虎贲'。在1943年常德会战中，师长余程万率部八千余人死守常德城16天，最后仅剩83人，被誉为'东方斯大林格勒'。",
     "honor": "虎贲部队·常德保卫战",
@@ -214,14 +445,30 @@
     "number": 58,
     "level": "division",
     "parentId": "unit_006",
-    "aliases": ["五十八师", "第五十八师", "58师"],
+    "aliases": [
+      "五十八师",
+      "第五十八师",
+      "58师"
+    ],
     "commanders": [
-      { "name": "冯圣法", "period": "1937-1939", "role": "师长" },
-      { "name": "张灵甫", "period": "1941-1944", "role": "师长" }
+      {
+        "name": "冯圣法",
+        "period": "1937-1939",
+        "role": "师长"
+      },
+      {
+        "name": "张灵甫",
+        "period": "1941-1944",
+        "role": "师长"
+      }
     ],
     "battles": [],
     "evolution": [
-      { "year": 1937, "event": "随第七十四军组建", "parentUnit": "第七十四军" }
+      {
+        "year": 1937,
+        "event": "随第七十四军组建",
+        "parentUnit": "第七十四军"
+      }
     ],
     "description": "第五十八师是第七十四军下辖主力师之一，张灵甫曾任师长。该师参加多次重大会战，战功卓著。",
     "honor": "",

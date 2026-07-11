@@ -468,5 +468,24 @@
       }
     ],
     "createdAt": "2025-02-15T08:00:00Z"
+  },
+  {
+    "id": "vet_1783699676205_nlaup7",
+    "name": "张大头",
+    "birthYear": null,
+    "deathYear": 2021,
+    "hometown": "不详",
+    "militaryUnit": "八路军第一二九师",
+    "unitId": "unit_129",
+    "rank": "",
+    "bio": "",
+    "battleIds": [
+      "btl_001"
+    ],
+    "customBattles": [],
+    "timeline": [],
+    "birthPlace": null,
+    "photo": "",
+    "createdAt": "2026-07-10T16:07:56.205Z"
   }
 ]
