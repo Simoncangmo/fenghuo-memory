@@ -63,10 +63,12 @@
 
     /* 时间线编辑 */
     .timeline-editor { display: flex; flex-direction: column; gap: 12px; }
-    .timeline-entry { display: flex; gap: 12px; align-items: flex-start; padding: 14px; background: var(--c-bg); border-radius: 8px; border: 1px solid var(--c-border-light); }
+    .timeline-entry { padding: 14px; background: var(--c-bg); border-radius: 8px; border: 1px solid var(--c-border-light); }
+    .timeline-entry .tl-row1 { display: flex; gap: 12px; align-items: center; margin-bottom: 10px; }
+    .timeline-entry .tl-row2 { display: flex; gap: 12px; align-items: center; }
     .timeline-entry select { width: 120px; flex-shrink: 0; }
     .timeline-entry input[type="number"] { width: 90px; flex-shrink: 0; }
-    .timeline-entry input[type="text"] { flex: 1; }
+    .timeline-entry .tl-row2 input[type="text"] { flex: 1; }
     .timeline-entry .tl-remove { flex-shrink: 0; width: 36px; height: 36px; border: none; border-radius: 8px; background: rgba(192,57,43,0.1); color: #c0392b; cursor: pointer; font-size: 18px; }
     .timeline-entry .tl-remove:hover { background: rgba(192,57,43,0.2); }
     .btn-add-tl { align-self: flex-start; padding: 8px 18px; border: 1px dashed var(--c-border); border-radius: 8px; background: transparent; color: var(--c-text-secondary); font-size: 14px; cursor: pointer; }
@@ -91,7 +93,7 @@
 
     @media (max-width: 640px) {
       .form-row { flex-direction: column; gap: 0; }
-      .timeline-entry { flex-wrap: wrap; }
+      .timeline-entry .tl-row1, .timeline-entry .tl-row2 { flex-wrap: wrap; }
       .timeline-entry select, .timeline-entry input[type="number"] { width: 100%; }
     }
   </style>
