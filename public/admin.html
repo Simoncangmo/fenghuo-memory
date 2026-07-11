@@ -16,7 +16,7 @@
     .form-row { display: flex; gap: 20px; margin-bottom: 18px; }
     .form-row > .form-field { flex: 1; }
     .form-field { margin-bottom: 16px; }
-    .form-field label { display: block; font-size: 14px; color: var(--c-text-secondary); margin-bottom: 6px; font-weight: 500; }
+    .form-field label { display: block; font-size: 16px; color: var(--c-text-secondary); margin-bottom: 6px; font-weight: 500; }
     .form-field label .required { color: var(--c-danger, #c0392b); }
     .form-field input, .form-field select, .form-field textarea {
       width: 100%; padding: 10px 14px; font-size: 16px; font-family: var(--font-sans);
@@ -27,10 +27,11 @@
       outline: none; border-color: var(--c-gold); box-shadow: 0 0 0 3px rgba(168,136,48,0.12);
     }
     .form-field textarea { resize: vertical; min-height: 80px; }
-    .form-field .hint { font-size: 12px; color: var(--c-text-muted); margin-top: 4px; }
+    .form-field .hint { font-size: 16px; color: var(--c-text-muted); margin-top: 4px; }
+    .form-section > .hint { font-size: 16px; color: var(--c-text-muted); }
 
     /* "不详" 选项 */
-    .unknown-toggle { display:inline-flex; align-items:center; gap:4px; font-size:14px; color:var(--c-text-secondary); cursor:pointer; white-space:nowrap; margin-bottom:0 !important; font-weight:400 !important; }
+    .unknown-toggle { display:inline-flex; align-items:center; gap:4px; font-size:16px; color:var(--c-text-secondary); cursor:pointer; white-space:nowrap; margin-bottom:0 !important; font-weight:400 !important; }
     .unknown-toggle input { width:auto !important; }
 
     /* 番号联想 */
@@ -39,9 +40,9 @@
     .unit-dropdown .dd-item { padding: 10px 14px; cursor: pointer; border-bottom: 1px solid var(--c-border-light); }
     .unit-dropdown .dd-item:last-child { border-bottom: none; }
     .unit-dropdown .dd-item:hover { background: var(--c-bg); }
-    .unit-dropdown .dd-name { font-size: 15px; color: var(--c-text); }
-    .unit-dropdown .dd-honor { font-size: 12px; color: var(--c-gold); margin-top: 2px; }
-    .unit-dropdown .dd-level { font-size: 12px; color: var(--c-text-muted); }
+    .unit-dropdown .dd-name { font-size: 16px; color: var(--c-text); }
+    .unit-dropdown .dd-honor { font-size: 16px; color: var(--c-gold); margin-top: 2px; }
+    .unit-dropdown .dd-level { font-size: 16px; color: var(--c-text-muted); }
 
     /* 战役搜索与选择 */
     .battle-search-wrap { position: relative; }
@@ -49,29 +50,30 @@
     .battle-dropdown .dd-item { padding: 10px 14px; cursor: pointer; border-bottom: 1px solid var(--c-border-light); }
     .battle-dropdown .dd-item:last-child { border-bottom: none; }
     .battle-dropdown .dd-item:hover { background: var(--c-bg); }
-    .battle-dropdown .dd-name { font-size: 15px; color: var(--c-text); }
-    .battle-dropdown .dd-date { font-size: 12px; color: var(--c-text-muted); }
+    .battle-dropdown .dd-name { font-size: 16px; color: var(--c-text); }
+    .battle-dropdown .dd-date { font-size: 16px; color: var(--c-text-muted); }
     .selected-battles { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-    .selected-battle-tag { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: var(--c-mil-green); color: #fff; border-radius: 20px; font-size: 14px; }
+    .selected-battle-tag { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: var(--c-mil-green); color: #fff; border-radius: 20px; font-size: 16px; }
     .selected-battle-tag .tag-remove { cursor: pointer; font-size: 16px; line-height: 1; }
     .selected-battle-tag.custom { background: rgba(168,136,48,0.15); color: var(--c-gold); border: 1px solid var(--c-gold); }
     .battle-custom-input-wrap { margin-top: 16px; display: flex; gap: 10px; align-items: center; }
-    .battle-custom-input-wrap input { flex: 1; padding: 10px 14px; font-size: 15px; border: 1px dashed var(--c-border); border-radius: 8px; background: var(--c-bg); color: var(--c-text); }
+    .battle-custom-input-wrap input { flex: 1; padding: 10px 14px; font-size: 16px; border: 1px dashed var(--c-border); border-radius: 8px; background: var(--c-bg); color: var(--c-text); }
     .battle-custom-input-wrap input:focus { outline: none; border-color: var(--c-gold); border-style: solid; }
-    .battle-custom-input-wrap button { padding: 10px 20px; font-size: 14px; background: var(--c-bg); border: 1px solid var(--c-border); border-radius: 8px; color: var(--c-text-secondary); cursor: pointer; white-space: nowrap; }
+    .battle-custom-input-wrap button { padding: 10px 20px; font-size: 16px; background: var(--c-bg); border: 1px solid var(--c-border); border-radius: 8px; color: var(--c-text-secondary); cursor: pointer; white-space: nowrap; }
     .battle-custom-input-wrap button:hover { border-color: var(--c-gold); color: var(--c-gold); }
 
     /* 时间线编辑 */
     .timeline-editor { display: flex; flex-direction: column; gap: 12px; }
     .timeline-entry { padding: 14px; background: var(--c-bg); border-radius: 8px; border: 1px solid var(--c-border-light); }
     .timeline-entry .tl-row1 { display: flex; gap: 12px; align-items: center; margin-bottom: 10px; }
-    .timeline-entry .tl-row2 { display: flex; gap: 12px; align-items: center; }
-    .timeline-entry select { width: 120px; flex-shrink: 0; }
-    .timeline-entry input[type="number"] { width: 90px; flex-shrink: 0; }
-    .timeline-entry .tl-row2 input[type="text"] { flex: 1; }
+    .timeline-entry .tl-row2 { display: flex; gap: 12px; align-items: flex-start; }
+    .timeline-entry select { width: 120px; flex-shrink: 0; font-size: 16px; padding: 8px 10px; border: 1px solid var(--c-border); border-radius: 8px; background: var(--c-surface); color: var(--c-text); }
+    .timeline-entry input[type="number"] { width: 90px; flex-shrink: 0; font-size: 16px; padding: 8px 10px; border: 1px solid var(--c-border); border-radius: 8px; background: var(--c-surface); color: var(--c-text); }
+    .timeline-entry .tl-row2 textarea { flex: 1; font-size: 16px; padding: 10px 14px; min-height: 80px; resize: vertical; border: 1px solid var(--c-border); border-radius: 8px; background: var(--c-surface); color: var(--c-text); font-family: var(--font-sans); }
+    .timeline-entry .tl-row2 textarea:focus { outline: none; border-color: var(--c-gold); box-shadow: 0 0 0 3px rgba(168,136,48,0.12); }
     .timeline-entry .tl-remove { flex-shrink: 0; width: 36px; height: 36px; border: none; border-radius: 8px; background: rgba(192,57,43,0.1); color: #c0392b; cursor: pointer; font-size: 18px; }
     .timeline-entry .tl-remove:hover { background: rgba(192,57,43,0.2); }
-    .btn-add-tl { align-self: flex-start; padding: 8px 18px; border: 1px dashed var(--c-border); border-radius: 8px; background: transparent; color: var(--c-text-secondary); font-size: 14px; cursor: pointer; }
+    .btn-add-tl { align-self: flex-start; padding: 8px 18px; border: 1px dashed var(--c-border); border-radius: 8px; background: transparent; color: var(--c-text-secondary); font-size: 16px; cursor: pointer; }
     .btn-add-tl:hover { border-color: var(--c-gold); color: var(--c-gold); }
 
     /* 提交按钮 */

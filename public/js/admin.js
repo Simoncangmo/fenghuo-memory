@@ -312,7 +312,7 @@ function renderTimeline() {
       '<input type="number" placeholder="月" value="' + (e.month || '') + '" min="1" max="12" style="width:70px;" onchange="updateTimeline(' + i + ',\'month\',this.value)">' +
       '</div>' +
       '<div class="tl-row2">' +
-      '<input type="text" placeholder="事件描述" value="' + escapeHtml(e.event || '') + '" onchange="updateTimeline(' + i + ',\'event\',this.value)">' +
+      '<textarea placeholder="事件描述" onchange="updateTimeline(' + i + ',\'event\',this.value)">' + escapeHtml(e.event || '') + '</textarea>' +
       '<button class="tl-remove" onclick="removeTimelineEntry(' + i + ')" title="删除">×</button>' +
       '</div>' +
       '</div>';
