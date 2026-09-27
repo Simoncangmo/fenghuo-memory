@@ -2,3 +2,8 @@ node_modules/
 .workbuddy/
 *.log
 nul
+
+# 本地部署驱动脚本（含服务器凭据，勿入公开仓库）
+scripts/deploy_ssh.py
+scripts/verify_ssh.py
+scripts/sync_uploads.py
