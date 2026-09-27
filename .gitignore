@@ -7,3 +7,5 @@ nul
 scripts/deploy_ssh.py
 scripts/verify_ssh.py
 scripts/sync_uploads.py
+scripts/verify_server_gh.py
+scripts/verify_server_gh2.py
